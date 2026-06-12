@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="theme-color" content="#0a0809"/>
+  <title>Palo Santo</title>
+  <meta name="description" content="Palo Santo — Colombian Caribbean coast music from Berlin. Cumbia, Puya, Mapalé, Bullerengue, Afro-Colombian rhythms."/>
+  <meta name="keywords" content="Palo Santo, cumbia, puya, mapalé, bullerengue, Colombian music, Berlin, Caribbean, Afro-Colombian"/>
+  <link rel="canonical" href="https://palosantomusic.github.io/" />
+  <meta name="robots" content="index, follow"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Palo Santo",
+    "description": "Colombian Caribbean coast music group based in Berlin. Cumbia, Puya, Mapalé, Bullerengue, Afro-Colombian Caribbean rhythms.",
+    "genre": ["Cumbia","Puya","Mapalé","Bullerengue","Afro-Colombian"],
+    "url": "https://palosantomusic.github.io/",
+    "sameAs": [
+      "https://www.instagram.com/palosantomusic/",
+      "https://www.youtube.com/@PaloSantoColetera",
+      "https://soundcloud.com/palo-santo-174460642"
+    ],
+    "email": "palosantomusicberlin@gmail.com"
+  }
+  </script>
+  <meta property="og:title" content="Palo Santo"/>
+  <meta property="og:description" content="Colombian Caribbean coast music from Berlin. Cumbia, Puya, Mapalé, Bullerengue."/>
+  <meta property="og:image" content="https://palosantomusic.github.io/assets/asset-6267c0f2.png"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Palo Santo"/>
+  <meta name="twitter:description" content="Colombian Caribbean coast music from Berlin."/>
+  <meta name="twitter:image" content="https://palosantomusic.github.io/assets/asset-6267c0f2.png"/>
+  <link rel="icon" type="image/png" href="assets/asset-1ec4875a.png">
+  <!-- Preconnect for font speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- display=swap prevents render-blocking -->
+  <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --p:#a55ff5;--r:#EB3527;--w:#f5f2f0;--ow:#e8e4df;
+      --dk:#0a0809;--dm:#110e10;--dw:#16121a;--pn:#130f17;
+      --bp:rgba(165,95,245,.2);
+    }
+    html{scroll-behavior:smooth}
+    body{background-color:var(--dk);background-image:url('assets/asset-3cb5addc.svg');background-repeat:repeat;background-size:500px 500px;background-attachment:fixed;color:var(--w);font-family:'SUSE',sans-serif;font-weight:300;overflow-x:hidden}
+
+    /* ── NAV BAR ── */
+    #topbar{position:fixed;top:0;left:0;right:0;z-index:201;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(10,8,9,0);transition:background .4s}
+    #topbar.scrolled{background:rgba(10,8,9,.96)}
+    #topbar-logo{display:block;height:28px;width:auto;opacity:0;pointer-events:none;transition:opacity .4s;cursor:pointer}
+    #topbar.scrolled #topbar-logo{opacity:1;pointer-events:auto}
+    /* ── HERO ── */    #hero{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#0a0809;z-index:1}
+    /* Video: full screen, behind everything */
+    .hvid{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+    /* Subtle dark tint so logo is readable */
+    .hoverlay{position:absolute;inset:0;z-index:1;background:rgba(8,6,9,.4);pointer-events:none}
+    /* Feathered bottom fade into About section */
+    .hfade{position:absolute;bottom:0;left:0;right:0;height:40%;z-index:2;pointer-events:none;
+      background:linear-gradient(to bottom,
+        transparent 0%,
+        rgba(17,14,16,.2) 35%,
+        rgba(17,14,16,.65) 60%,
+        rgba(17,14,16,.92) 82%,
+        #110e10 100%)}
+    .hframe{position:absolute;inset:40px;pointer-events:none;border:1px solid rgba(165,95,245,.05);z-index:3}
+    .hframe::before{content:'';position:absolute;top:-1px;left:-1px;width:40px;height:40px;border-top:1px solid rgba(165,95,245,.35);border-left:1px solid rgba(165,95,245,.35)}
+    .hframe::after{content:'';position:absolute;bottom:-1px;right:-1px;width:40px;height:40px;border-bottom:1px solid rgba(235,53,39,.35);border-right:1px solid rgba(235,53,39,.35)}
+    /* Logo + content float above everything */
+    .hcontent{position:relative;z-index:5;text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px}
+    .hlogo{width:clamp(280px,52vw,600px);opacity:0;animation:fu 1.4s ease .3s forwards;background:transparent}
+    .hlogo svg{background:transparent}
+    .hcta{display:flex;gap:16px;opacity:0;animation:fu 1s ease 1.2s forwards}
+
+    /* ── BUTTONS — pill shape ── */
+    .btn{font-family:'SUSE',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1.5px solid;border-radius:999px;transition:all .3s;cursor:pointer;display:inline-block}
+    .btn-p{background:var(--p);color:var(--w);border-color:var(--p)}
+    .btn-p:hover{background:transparent;color:var(--p)}
+    .btn-o{background:transparent;color:var(--w);border-color:rgba(245,242,240,.3)}
+    .btn-o:hover{border-color:var(--r);color:var(--r)}
+
+    @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    /* ── SHARED ── */
+    .sw{padding:100px 64px;max-width:860px;margin:0 auto;text-align:center}
+    .sh{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:52px}
+    .st{font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+    /* Symmetric rule lines on both sides */
+    .sr{width:48px;height:1px;background:linear-gradient(to right,transparent,rgba(165,95,245,.4));flex-shrink:0}
+    .sh .sr:first-child{background:linear-gradient(to left,transparent,rgba(165,95,245,.4))}
+
+    /* ── ABOUT ── */
+    #about{background:transparent}
+    #about::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:var(--dm);
+      -webkit-mask-image:linear-gradient(to bottom,
+        black 0%,
+        black 92%,
+        transparent 100%);
+      mask-image:linear-gradient(to bottom,
+        black 0%,
+        black 92%,
+        transparent 100%);
+      pointer-events:none;
+      z-index:0;
+    }
+    #about .sw{position:relative;z-index:1}
+    .abt{font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:300;line-height:2;opacity:.75;text-align:center}
+    .abt strong{font-weight:700;color:var(--p)}
+    .instr{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;justify-content:center}
+    .ins{font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;border:1px solid var(--bp);color:var(--p);border-radius:999px}
+
+    /* ── MUSIC ── */
+    #music{background:transparent;overflow:visible}
+    .epg{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:0 auto;padding:30px;overflow:visible}
+    .epc{background:transparent;border:1px solid var(--bp);overflow:visible;border-radius:16px;position:relative;transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s}
+    .epc:hover{transform:scale(1.06);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .epc.cs{border-style:dashed;opacity:.6}
+    .epaw{aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:16px 16px 0 0}
+    .epc:nth-child(1) .epaw{background:transparent}
+    .epc:nth-child(2) .epaw{background:transparent}
+    .epai{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px}
+    .epic{font-size:2.5rem;opacity:.12}
+    .csl{font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--r);opacity:.7}
+    .scw{position:absolute;inset:0;opacity:0;transition:opacity .4s;border-radius:16px 16px 0 0;overflow:hidden}
+    .scw iframe{width:100%;height:100%;border:none}
+    .epc:not(.cs):hover .scw{opacity:1}
+    .epm{padding:18px 20px;text-align:center;background:var(--pn);border-radius:0 0 16px 16px}
+    .ept{font-size:.55rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--r);margin-bottom:5px}
+    .eptt{font-size:1.1rem;font-weight:700;color:var(--w);margin-bottom:4px}
+    .eps{font-size:.72rem;font-weight:300;opacity:.4}
+    .epl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--w);background:var(--p);text-decoration:none;padding:8px 20px;border-radius:999px;border:1.5px solid var(--p);transition:background .3s,color .3s}
+    .epl:hover{background:transparent;color:var(--p)}
+    .cs .epl{background:rgba(165,95,245,.1);color:rgba(245,242,240,.3);border-color:rgba(165,95,245,.15);pointer-events:none}
+
+    /* ── PRESS — infinite marquee ── */
+    #press{background:var(--dm);overflow:hidden;padding:80px 0}
+    .marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite;padding:30px 0}
+    .marquee-track:hover{animation-play-state:paused}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .pph{flex:0 0 auto;width:420px;height:300px;margin-right:14px;background:var(--pn);
+      border:1px solid rgba(165,95,245,.1);border-radius:14px;overflow:hidden;
+      opacity:.82;
+      transition:opacity .4s,border-color .4s,transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s;
+      cursor:pointer;position:relative}
+    .pph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);
+      transition:transform .5s cubic-bezier(.25,.46,.45,.94),filter .4s}
+    .pph.bw img{filter:grayscale(100%)}
+    .pph:hover{opacity:1;border-color:var(--p);transform:scale(1.1);z-index:20;
+      box-shadow:0 24px 64px rgba(0,0,0,.8)}
+    .pph:hover img{transform:scale(1.08);filter:grayscale(0%)}
+
+    /* ── LIGHTBOX ── */
+    #lb{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.93);display:none;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+    #lb.open{display:flex}
+    #lb.visible{opacity:1}
+    #lb-img{max-width:90vw;max-height:78vh;object-fit:contain;border-radius:6px;display:block;user-select:none}
+    #lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(245,242,240,.7);font-size:2rem;cursor:pointer;line-height:1;transition:color .2s}
+    #lb-close:hover{color:#fff}
+    .lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(245,242,240,.08);border:1px solid rgba(245,242,240,.15);color:var(--w);width:52px;height:52px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+    .lb-arrow:hover{background:rgba(165,95,245,.25);border-color:var(--p)}
+    #lb-prev{left:24px}
+    #lb-next{right:24px}
+    #lb-footer{margin-top:20px;font-family:'SUSE',sans-serif;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,242,240,.5);text-align:center}
+    #lb-credit{font-family:'SUSE',sans-serif;font-size:.65rem;letter-spacing:.1em;color:rgba(245,242,240,.28);text-align:center;margin-top:5px;font-style:italic}
+    #lb-counter{font-size:.7rem;letter-spacing:.12em;color:rgba(245,242,240,.3);margin-top:6px}
+
+    /* ── CONTACT ── */
+    #contact{background:var(--dk)}
+    .cg{display:flex;flex-direction:column;align-items:center;gap:40px;max-width:560px;margin:0 auto;text-align:center;width:100%}
+    .cl{font-size:clamp(1rem,1.6vw,1.3rem);font-weight:200;line-height:1.6;opacity:.7;margin-bottom:24px}
+    .cits{display:flex;flex-direction:column;gap:16px;margin-bottom:32px;align-items:center}
+    .clbl{font-size:.56rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--r);opacity:.7;margin-bottom:4px}
+    .cv{font-size:1.1rem;font-weight:400;color:var(--w);opacity:.8;text-decoration:none;transition:opacity .3s,color .3s}
+    .cv:hover{opacity:1;color:var(--p)}
+    .socs{display:flex;gap:10px;justify-content:center}
+    .soc{width:48px;height:48px;border:1px solid var(--bp);border-radius:999px;display:flex;align-items:center;justify-content:center;color:rgba(245,242,240,.45);opacity:1;text-decoration:none;transition:color .3s,border-color .3s,background .3s,transform .3s;cursor:pointer}
+    .soc:hover{border-color:var(--p);color:var(--p);background:rgba(165,95,245,.08);transform:translateY(-3px)}
+    .cform{width:100%}
+    .fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fg{margin-bottom:18px;text-align:left}
+    label{display:block;font-size:.72rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--p);opacity:.9;margin-bottom:10px}    input,textarea,select{width:100%;background:rgba(165,95,245,.06);border:1px solid var(--bp);color:var(--w);font-family:'SUSE',sans-serif;font-weight:400;font-size:1rem;padding:14px 16px;outline:none;border-radius:8px;transition:border-color .3s,background .3s}
+    input:focus,textarea:focus,select:focus{border-color:var(--p);background:rgba(165,95,245,.07)}
+    textarea{resize:none;height:110px}
+    select option{background:var(--dm)}
+    .bsub{width:100%;font-family:'SUSE',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;padding:14px;background:var(--p);color:var(--w);border:1.5px solid var(--p);border-radius:999px;cursor:pointer;transition:all .3s}
+    .bsub:hover{background:transparent;color:var(--p)}
+
+    /* ── FOOTER ── */
+    footer{padding:44px 64px;border-top:1px solid rgba(165,95,245,.12);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:var(--dk);text-align:center}
+    .footer-logo{width:52px;display:block}
+    .fc{font-size:.6rem;font-weight:200;letter-spacing:.12em;opacity:.25}
+    .fl{display:flex;gap:28px}
+    .fl a{font-size:.6rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--w);opacity:.28;text-decoration:none;transition:opacity .3s}
+    .fl a:hover{opacity:.85}
+
+    /* ── REVEAL ── */
+    .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+    .rv.in{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+    /* ═══════════════════════════════
+       MOBILE  ≤ 768px
+    ═══════════════════════════════ */
+    @media(max-width:768px){
+      .btn,.soc,.bsub{cursor:pointer}
+
+      /* topbar */
+      #topbar{height:44px}
+      #topbar-logo{height:32px}
+
+      /* hero */
+      .hlogo{width:82vw}
+      .hframe{inset:16px}
+      .hframe::before,.hframe::after{width:24px;height:24px}
+      .hcta{flex-direction:column;gap:12px;align-items:center}
+      .btn{padding:12px 32px;font-size:.7rem;width:200px;text-align:center}
+  
+      /* shared sections */
+      .sw{padding:60px 20px}
+
+      /* section header */
+      .sh{flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:36px}
+      .sr{display:none}
+
+      /* about */
+      .abt{font-size:1rem;line-height:1.85}
+      .instr{gap:8px}
+      .ins{font-size:.62rem;padding:6px 14px}
+
+      /* music EP grid — stack on mobile */
+      .epg{grid-template-columns:1fr;max-width:340px;gap:20px}
+      .epc:hover{transform:none}
+
+      /* press marquee photos */
+      .pph{width:260px!important;height:180px!important}
+
+      /* contact */
+      .cg{gap:32px}
+      .fr{grid-template-columns:1fr}
+      input,textarea,select{font-size:16px} /* prevent iOS zoom */
+
+      /* footer */
+      footer{padding:32px 20px}
+      .fl{flex-wrap:wrap;justify-content:center;gap:16px}
+    }
+
+    /* TABLET 769–1024px */
+    @media(min-width:769px) and (max-width:1024px){
+      .sw{padding:80px 40px}
+      .epg{max-width:600px}
+      .pph{width:340px!important;height:240px!important}
+      .hlogo{width:44vw}
+    }
+
+    /* EP artwork image */
+    .ep-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:16px 16px 0 0}
+    .ep-img-sc{opacity:1;transition:opacity .4s}
+    .epc:hover .ep-img-sc{opacity:0}
+
+    /* Particles on both EP cards — canvas sits on epc (overflow:visible), centred */
+    .ep-particles{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+
+    /* New EP glow */
+    .epc-new{border-color:rgba(165,95,245,.5)!important}
+    .ep-glow-ring{position:absolute;inset:-8px;border-radius:20px;pointer-events:none;
+      box-shadow:0 0 28px 6px rgba(165,95,245,.45),0 0 60px 12px rgba(165,95,245,.2),0 0 4px 1px rgba(235,53,39,.3);
+      animation:glowpulse 3s ease-in-out infinite;z-index:3}
+    @keyframes glowpulse{
+      0%,100%{box-shadow:0 0 28px 6px rgba(165,95,245,.45),0 0 60px 12px rgba(165,95,245,.2),0 0 4px 1px rgba(235,53,39,.3)}
+      50%{box-shadow:0 0 40px 10px rgba(165,95,245,.65),0 0 80px 20px rgba(165,95,245,.3),0 0 8px 3px rgba(235,53,39,.5)}
+    }</style>
+</head>
+<body>
+
+<!-- SVG symbol defined once, reused via <use> — single parse, no duplication -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ps-logo" viewBox="0 0 1010 864">
+    <path fill="#ff0b0b" d="M593.2,185.2l18.1-162.7c.4-3.2,2.8-5.7,6-6.2l91-12.1c4.7-.6,8.7,3.5,7.8,8.2l-33.2,178.1c-.2,1.3-.1,2.7.4,4l77.4,186.4c1.7,4.1-.8,8.8-5.2,9.6l-73.7,13.4c-3.3.6-6.6-1.2-7.8-4.4l-80.3-211.1c-.4-1-.5-2.2-.4-3.3Z"/>
+    <path fill="#ff0b0b" d="M927,188l-81-139.5c-5.1-8.7-14.9-13.6-24.9-12.2l-64.5,8.5c-10,1.3-18.3,8.6-20.9,18.4l-31.5,118.6c-1.5,5.5-1,11.3,1.3,16.4l66.1,150.9c4,9.1,13,15,22.9,15h78.1c11.6,0,21.7-8,24.3-19.2l32.9-138.5c1.5-6.2.5-12.8-2.7-18.3ZM835.8,337.1c-3.7-.6-6.8-3.3-7.7-6.9l-36.8-139.3c-.6-2.3-.9-4.8-.8-7.2l3.3-99.7c.2-5.9,5.5-10.4,11.4-9.5,3.9.6,7,3.4,8.1,7.1l31.3,110.7c.6,2.1.9,4.4.9,6.6l1.1,128.9c0,5.8-5.1,10.2-10.8,9.4Z"/>
+    <path fill="#a55ff5" d="M470.3,536.4l33.9-64.7c4-7.7.1-17.2-8.2-19.9l-107.7-33.8c-2.2-.7-4.5-.8-6.8-.4l-131.5,24.7c-1.4.3-2.8.8-4.1,1.5l-108.3,59.2c-6,3.3-8.7,10.4-6.5,16.8l15.2,44.5c1.5,4.4,5.1,7.8,9.6,9l93.3,25.1c4.3,1.2,7.9,4.4,9.5,8.6l6,15.8c1.9,4.9.8,10.5-2.7,14.4l-43.5,48c-4.9,5.5-13.3,6.1-19,1.6l-47.4-37.4c-2.1-1.7-3.7-3.9-4.6-6.5l-43.3-126.6c-3.9-11.3-19.2-12.9-25.3-2.6L3.9,640.3c-2.4,4.1-2.6,9.2-.4,13.4l97,191.8c2.2,4.4,6.6,7.3,11.6,7.7l156.3,10.2c4.7.3,9.2-1.8,12.1-5.5l90-118.3c2.8-3.7,3.6-8.6,2.1-13.1l-51.6-149.1c-1.4-3.9-4.4-7.1-8.3-8.5l-61.3-22.9c-11.7-4.4-12.3-20.7-.9-25.8l19.9-9.1c3.5-1.6,7.6-1.7,11.2-.2l99.9,41.6c2.3,1,4.8,1.3,7.3.9l71.1-9.8c4.5-.6,8.4-3.4,10.5-7.4Z"/>
+    <path fill="#a55ff5" d="M535.2,534.8l-46.5,16c-1.5.5-2.3,2.1-1.9,3.6l74.1,273.2c.4,1.4,1.7,2.3,3.1,2.2l34.8-2.4c1.9-.1,3.2-1.9,2.7-3.7l-47.3-185c-.9-3.6,4.1-5.3,5.6-2l85.7,191.6c.5,1.1,1.6,1.8,2.7,1.8h29.7c1.7,0,3-1.4,3-3.1l-6.8-312.5c0-1.8-1.7-3.2-3.4-2.9l-63,9.3c-1.6.2-2.7,1.6-2.6,3.2l7.3,102.4c.2,3-3.6,4.4-5.4,2l-68.6-92.6c-.8-1.1-2.1-1.5-3.4-1.1Z"/>
+    <path fill="#a55ff5" d="M886.8,393.6l-323.8,41.4c-3.4.4-6.3,2.8-7.4,6l-19.9,58c-2.2,6.3,3.1,12.8,9.8,11.8l145.2-20.2c5.4-.7,10.2,3.4,10.2,8.8l3.1,313.7c0,5.3,4.6,9.4,9.8,8.9l110.2-10.3c6.3-.6,10-7.3,7.2-13l-64.8-129.3c-.8-1.6-1.1-3.4-.9-5.1l18.8-156c.4-3.3,2.6-6.1,5.7-7.3l90.9-34.8c2.9-1.1,5.1-3.7,5.6-6.8l10.1-55.3c1.1-6-4-11.3-10-10.5Z"/>
+    <path fill="#a55ff5" d="M535.9,786.4l-76.6-199c-3-7.8-11-12.5-19.3-11.4-39.4,5-55.9,5.3-66.8,10.8-5.2,2.7-6.9,9-5.9,14.8l20.1,116.8c.4,2.5.3,5.1-.3,7.6l-22.1,85.5c-2.7,10.3,4.1,20.6,14.6,22.3l26.4,4.2c10.7,1.7,20.5-6.4,20.8-17.2l.5-16.9,46.9-24,2.3,21.9c1.2,11.1,12,18.5,22.8,15.5l24.6-6.9c10.2-2.9,15.7-13.9,11.9-23.8ZM428.7,762.4l1.3-40.3-9.5-95.1c-.3-2.9.5-5.8,2.3-8.2,5.3-7.2,16.4-6,20.1,2l1.6,3.4c.4.8.7,1.6.9,2.5l21.9,86.5c.2.8.4,1.7.5,2.5l3.8,36.6-42.8,10Z"/>
+    <path fill="#ff0b0b" d="M631.5,375.9l-48.4-138.8c-1-2.9-4-4.6-7-3.9l-54.6,12.4c-1.4.3-2.6,1.1-3.5,2.3l-104.9,142.7c-2.5,3.4-.8,8.2,3.2,9.3l64.6,18.7c2.8.8,5.8-.5,7.1-3.2l14.6-30.8,68.1-6.5,3.5,31.9c.5,4.5,5.6,6.9,9.4,4.3l45.7-31.5c2.2-1.5,3.2-4.4,2.3-6.9ZM519.7,348.7l29.7-62.6c2.6-5.5,10.7-4.1,11.4,1.9l6.8,62.1-47.9-1.5Z"/>
+    <path fill="#a55ff5" d="M1002,610.6l-101.9-100.2c-4.8-4.7-11.4-6.9-18-6.2l-54.3,6.4c-9.7,1.1-17.4,8.5-19.1,18.1l-22,126.7c-1.1,6.1.5,12.4,4.3,17.3l93.7,120.2c4.8,6.2,12.6,9.4,20.4,8.3l62.2-8.8c9.6-1.4,17.2-8.8,18.7-18.4l22.3-144.4c1.1-7-1.3-14.1-6.3-19ZM932.4,772.8c-7.7,1.6-15.4-2.7-18.1-10.1l-41-111c-.7-1.8-1.1-3.6-1.3-5.5l-12.7-97.8c-.7-5.3,1.6-10.4,6-13.4,7.4-5,17.6-1.9,21.1,6.4l41.2,98c.8,2,1.4,4.1,1.7,6.3l15.2,109.7c1.1,8.1-4.2,15.6-12.2,17.3Z"/>
+    <path fill="#ff0b0b" fill-rule="evenodd" d="M270.9,182.1l-12.3,230.8c-.2,3.9,3.3,7,7.2,6.2l117.5-23.9c3.1-.6,5.1-3.5,4.8-6.6l-13.5-109c-.4-3.3,1.9-6.3,5.2-6.7,60.7-8.6,173.5-36.9,182.5-89.1,9.3-54,13.8-107.1,14.9-126.9,2.2-16.6-3-51.1-41.3-56.2-28.6-3.8-115,12.8-186.8,26.5-23.4,4.5-45.3,8.7-63.1,11.8-1.4.2-2.6.9-3.5,2l-106.9,125c-3.3,3.9-.6,9.9,4.6,9.9h84.8c3.4,0,6.2,2.9,6,6.3ZM382,88.5c27.5-14.5,83.5-22,75.5,19.9-8.9,46.5-49.4,71.8-70.3,72.2-16.7.3-11.6-58.9-5.2-92.1Z"/>
+  </symbol>
+</svg>
+
+<div id="topbar">
+  <a href="#hero" aria-label="Palo Santo home">
+    <img id="topbar-logo" src="assets/asset-426775c8.jpg" alt="Palo Santo">
+  </a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <video class="hvid" autoplay muted loop playsinline preload="none" poster="assets/poster.jpg">
+    <source src="assets/asset-bbed6b91.mp4" type="video/mp4">
+  </video>
+  <div class="hoverlay"></div>
+  <div class="hfade"></div>
+  <div class="hframe"></div>
+  <div class="hcontent">
+    <div class="hlogo" id="hlogo">
+      <svg viewBox="0 0 1010 864" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible">
+        <use href="#ps-logo"/>
+      </svg>
+    </div>
+    <div class="hcta">
+      <a href="#music" class="btn btn-p">Listen Now</a>
+      <a href="#contact" class="btn btn-o">Book the Band</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="max-width:100%;padding:0;position:relative">
+  <div class="sw">
+    <div class="sh rv"><div class="sr"></div><h2 class="st">About</h2><div class="sr"></div></div>
+    <div class="rv d1">
+      <p class="abt"><strong>PALO SANTO</strong> is a Colombian Caribbean coast music band based in Berlin. They capture the vibrant musical essence of the region, blending traditional instruments — <em>alegre</em>, <em>tambora</em>, <em>maracas</em>, <em>gaita</em>, and vocals — with electric bass and piano.</p>
+      <p class="abt" style="margin-top:22px">PALO SANTO brings the energy of Barranquilla's Carnival, the heat of Vallenato, and the deep roots of Cumbia, Puya, Mapalé, Bullerengue, and Afro-Colombian rhythms to the stages of Berlin and beyond.</p>
+      <div class="instr">
+        <span class="ins">Cumbia</span><span class="ins">Puya</span><span class="ins">Mapalé</span><span class="ins">Bullerengue</span><span class="ins">Afro Colombian Caribbean Rhythms</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music" class="sw" style="overflow:visible">
+  <div class="sh rv"><div class="sr"></div><h2 class="st">Music</h2><div class="sr"></div></div>
+  <div class="epg">
+    <!-- NEW EP — featured first, with glow + particles -->
+    <div class="epc epc-new rv">
+      <canvas class="ep-particles" id="ep-canvas"></canvas>
+      <div class="ep-glow-ring"></div>
+      <div class="epaw">
+        <img src="assets/asset-4191a794.webp" alt="Hay Unas Cuestiones artwork" class="ep-img" loading="lazy" decoding="async">
+      </div>
+      <div class="epm">
+        <p class="ept" style="color:var(--p)">EP · Coming Soon</p>
+        <h3 class="eptt">Hay Unas Cuestiones</h3>
+        <p class="eps">New EP — Stay tuned</p>
+        <span class="epl" style="background:rgba(165,95,245,.12);color:rgba(245,242,240,.35);border-color:rgba(165,95,245,.18);pointer-events:none">▶ &nbsp;Coming Soon</span>
+      </div>
+    </div>
+    <!-- EL PALO SANTO EP -->
+    <div class="epc rv d2">
+      <div class="epaw">
+        <div class="epai"><span class="epic">♫</span></div>
+        <div class="scw" data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/palo-santo-174460642&color=%23a55ff5&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></div>
+        <img src="assets/asset-bc076d7b.webp" alt="El Palo Santo EP artwork" class="ep-img ep-img-sc" loading="lazy" decoding="async">
+      </div>
+      <div class="epm">
+        <p class="ept">EP · Out Now</p>
+        <h3 class="eptt">El Palo Santo EP</h3>
+        <p class="eps">Listen on SoundCloud</p>
+        <a href="https://soundcloud.com/palo-santo-174460642" target="_blank" rel="noopener" class="epl">▶ &nbsp;Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press" style="background:var(--dm);max-width:100%;padding:0;overflow:visible">
+  <div style="overflow:hidden">
+    <div class="marquee-track">
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo with Pio Molina · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-pio-molina.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo recording session, Berlin 2025"><img src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo with Pio Molina · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-pio-molina.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo recording session, Berlin 2025"><img src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo gallery">
+  <button id="lb-close" aria-label="Close">&#x2715;</button>
+  <button class="lb-arrow" id="lb-prev" aria-label="Previous">&#8592;</button>
+  <img id="lb-img" src="" alt="Palo Santo live">
+  <button class="lb-arrow" id="lb-next" aria-label="Next">&#8594;</button>
+  <div id="lb-footer"></div>
+  <div id="lb-credit"></div>
+  <div id="lb-counter"></div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--dk);max-width:100%;padding:0">
+  <div class="sw">
+    <div class="sh rv"><div class="sr"></div><h2 class="st">Contact</h2><div class="sr"></div></div>
+    <div class="socs rv d1">
+      <a href="mailto:palosantomusicberlin@gmail.com" class="soc" aria-label="Email">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/palosantomusic/" target="_blank" rel="noopener" class="soc" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.3 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1.0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@PaloSantoColetera" target="_blank" rel="noopener" class="soc" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </a>
+      <a href="https://soundcloud.com/palo-santo-174460642" target="_blank" rel="noopener" class="soc" aria-label="SoundCloud">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.56 8.87V17h8.76c1.47-.01 2.68-1.2 2.68-2.68 0-1.48-1.21-2.68-2.68-2.68-.09 0-.19.01-.28.02C19.9 9.18 18.25 8 16.36 8c-.5 0-.98.09-1.42.26A4.84 4.84 0 0 0 11.56 8.87zM0 15.24c0 .97.78 1.76 1.76 1.76.97 0 1.76-.79 1.76-1.76 0-.98-.79-1.76-1.76-1.76C.78 13.48 0 14.26 0 15.24zm4.08.7V11.7a3.4 3.4 0 0 1 1.02-.16c.33 0 .64.05.93.13v4.31H4.08zm2.91 0v-5.8c.44-.34.99-.54 1.58-.54.34 0 .67.07.96.19v6.15H6.99zm2.89 0V9.58a4.15 4.15 0 0 1 2.68-.3v8.66H9.88z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#hero" class="footer-logo" aria-label="Back to top">
+    <svg viewBox="0 0 1010 864" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+      <use href="#ps-logo"/>
+    </svg>
+  </a>
+  <p class="fc">© 2026 Palo Santo. All rights reserved.</p>
+  <nav class="fl">
+    <a href="#about">About</a><a href="#music">Music</a><a href="#press">Press</a><a href="#contact">Contact</a>
+  </nav>
+</footer>
+
+<script>
+
+  // ── Topbar: appear once hero logo scrolls out ──
+  const topbar=document.getElementById('topbar');
+  const heroLogo=document.getElementById('hlogo');
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(!ticking){requestAnimationFrame(()=>{
+      const gone=heroLogo.getBoundingClientRect().bottom<60;
+      topbar.classList.toggle('scrolled',gone);
+      ticking=false;
+    });ticking=true;}
+  },{passive:true});
+
+  // ── Lazy-load SoundCloud iframe on first hover ──
+  document.querySelectorAll('.scw[data-src]').forEach(wrap=>{
+    let loaded=false;
+    wrap.closest('.epc').addEventListener('mouseenter',()=>{
+      if(loaded)return;loaded=true;
+      const f=document.createElement('iframe');
+      f.scrolling='no';f.frameBorder='no';f.allow='autoplay';f.src=wrap.dataset.src;
+      wrap.appendChild(f);
+    },{once:false});
+  });
+
+  // ── Scroll reveal ──
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  }),{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // ── EP Particles — runs on both album canvases ──
+  function initParticles(canvasId, primaryCol, secondaryCol) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, pts = [];
+
+    function resize() {
+      const r = canvas.parentElement.getBoundingClientRect();
+      W = canvas.width = r.width + 80;
+      H = canvas.height = r.height + 80;
+      // Keep it centred via CSS transform; just update the pixel size
+    }
+
+    function mkPt() {
+      // Spawn from edges of the card area (inset 40px = card boundary)
+      const side = Math.floor(Math.random() * 4);
+      const margin = 40;
+      let x, y;
+      if (side === 0) { x = margin + Math.random() * (W - margin*2); y = H - margin; }
+      else if (side === 1) { x = W - margin; y = margin + Math.random() * (H - margin*2); }
+      else if (side === 2) { x = margin + Math.random() * (W - margin*2); y = margin; }
+      else { x = margin; y = margin + Math.random() * (H - margin*2); }
+      // Direction: outward from center
+      const cx = W / 2, cy = H / 2;
+      const ang = Math.atan2(y - cy, x - cx) + (Math.random() - .5) * .9;
+      const spd = .3 + Math.random() * .7;
+      return {
+        x, y,
+        vx: Math.cos(ang) * spd,
+        vy: Math.sin(ang) * spd,
+        life: 0,
+        maxLife: 70 + Math.random() * 90,
+        r: .8 + Math.random() * 2.2,
+        col: Math.random() > .55 ? primaryCol : secondaryCol
+      };
+    }
+
+    for (let i = 0; i < 35; i++) pts.push(mkPt());
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      pts.forEach((p, i) => {
+        p.x += p.vx; p.y += p.vy; p.life++;
+        const t = p.life / p.maxLife;
+        const alpha = t < .2 ? t / .2 : (1 - t);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * (1 - t * .4), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.col},${(alpha * .9).toFixed(2)})`;
+        ctx.fill();
+        if (p.life >= p.maxLife) pts[i] = mkPt();
+      });
+      if (Math.random() < .025) for (let i = 0; i < 2; i++) pts.push(mkPt());
+      if (pts.length > 70) pts.splice(0, pts.length - 70);
+      requestAnimationFrame(frame);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    frame();
+  }
+
+  // New EP only: purple + red particles
+  initParticles('ep-canvas', '137,74,234', '235,53,39');
+
+  // ── Lightbox ──
+  (function(){
+    const lb=document.getElementById('lb');
+    const lbImg=document.getElementById('lb-img');
+    const lbFooter=document.getElementById('lb-footer');
+    const lbCredit=document.getElementById('lb-credit');
+    const lbCounter=document.getElementById('lb-counter');
+
+    // Collect unique cards from first row only (rv), preserving caption metadata
+    const cards=[...document.querySelectorAll('.pph.rv')].filter((c,i,a)=>{
+      const src=c.querySelector('img').src;
+      return a.findIndex(x=>x.querySelector('img').src===src)===i;
+    });
+
+    let cur=0;
+
+    function show(idx){
+      cur=(idx+cards.length)%cards.length;
+      const card=cards[cur];
+      lbImg.src=card.querySelector('img').src;
+      lbFooter.textContent=card.dataset.caption||'Palo Santo Live!';
+      lbCredit.textContent=card.dataset.credit||'';
+      lbCounter.textContent=(cur+1)+' / '+cards.length;
+    }
+
+    function open(idx){
+      show(idx);
+      lb.classList.add('open');
+      requestAnimationFrame(()=>lb.classList.add('visible'));
+      document.body.style.overflow='hidden';
+    }
+
+    function close(){
+      lb.classList.remove('visible');
+      setTimeout(()=>{lb.classList.remove('open');document.body.style.overflow='';},300);
+    }
+
+    document.querySelectorAll('.pph').forEach(card=>{
+      card.addEventListener('click',()=>{
+        const src=card.querySelector('img').src;
+        const idx=cards.findIndex(c=>c.querySelector('img').src===src);
+        open(idx>=0?idx:0);
+      });
+    });
+
+    document.getElementById('lb-prev').addEventListener('click',()=>show(cur-1));
+    document.getElementById('lb-next').addEventListener('click',()=>show(cur+1));
+    document.getElementById('lb-close').addEventListener('click',close);
+    lb.addEventListener('click',e=>{if(e.target===lb)close();});
+    document.addEventListener('keydown',e=>{
+      if(!lb.classList.contains('open'))return;
+      if(e.key==='ArrowLeft')show(cur-1);
+      else if(e.key==='ArrowRight')show(cur+1);
+      else if(e.key==='Escape')close();
+    });
+  })();
+</script>
+</body>
+</html>
