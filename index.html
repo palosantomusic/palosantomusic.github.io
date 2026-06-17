@@ -202,6 +202,25 @@
     .fl a{font-size:.6rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--w);opacity:.28;text-decoration:none;transition:opacity .3s}
     .fl a:hover{opacity:.85}
 
+    /* ── CONCERTS ── */
+    #concerts{background:var(--dm);overflow:hidden}
+    .clist{display:flex;flex-direction:column;gap:0;max-width:760px;margin:0 auto}
+    .citem{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid rgba(165,95,245,.1);transition:background .3s}
+    .citem:last-child{border-bottom:none}
+    .cdate{text-align:center;flex-shrink:0}
+    .cdate-day{font-size:2rem;font-weight:700;color:var(--p);line-height:1}
+    .cdate-mon{font-size:.55rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--p);opacity:.6;margin-top:2px}
+    .cdate-yr{font-size:.55rem;font-weight:300;letter-spacing:.14em;opacity:.35;margin-top:2px}
+    .cinfo{min-width:0}
+    .cname{font-size:1rem;font-weight:700;color:var(--w);margin-bottom:4px}
+    .cvenue{font-size:.78rem;font-weight:300;opacity:.55;letter-spacing:.06em}
+    .ctag{font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 14px;border:1px solid rgba(165,95,245,.3);color:var(--p);border-radius:999px;white-space:nowrap;flex-shrink:0}
+    @media(max-width:768px){
+      .citem{grid-template-columns:80px 1fr;gap:14px}
+      .ctag{display:none}
+      .cdate-day{font-size:1.5rem}
+    }
+
     /* ── REVEAL ── */
     .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
     .rv.in{opacity:1;transform:translateY(0)}
@@ -405,6 +424,24 @@
   <div id="lb-counter"></div>
 </div>
 
+<section id="concerts">
+  <div class="sw">
+    <div class="sh rv"><div class="sr"></div><h2 class="st">Past Concerts</h2><div class="sr"></div></div>
+    <div class="clist">
+      <div class="citem rv">
+        <div class="cdate"><div class="cdate-day">01</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2026</div></div>
+        <div class="cinfo"><div class="cname">Karneval der Kulturen</div><div class="cvenue">Straßenumzug · Berlin, Germany</div></div>
+        <span class="ctag">Festival</span>
+      </div>
+      <div class="citem rv d1">
+        <div class="cdate"><div class="cdate-day">14</div><div class="cdate-mon">Dec</div><div class="cdate-yr">2023</div></div>
+        <div class="cinfo"><div class="cname">La Noche</div><div class="cvenue">Badehaus Berlin · Berlin, Germany</div></div>
+        <span class="ctag">Club</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="sw">
     <div class="sh rv"><div class="sr"></div><h2 class="st">Contact</h2><div class="sr"></div></div>
@@ -433,7 +470,7 @@
   </a>
   <p class="fc">© 2026 Palo Santo. All rights reserved.</p>
   <nav class="fl">
-    <a href="#about">About</a><a href="#music">Music</a><a href="#press">Press</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#music">Music</a><a href="#press">Press</a><a href="#concerts">Concerts</a><a href="#contact">Contact</a>
   </nav>
 </footer>
 
