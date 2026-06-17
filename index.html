@@ -205,8 +205,10 @@
     /* ── CONCERTS ── */
     #concerts{background:var(--dm);overflow:hidden}
     .clist{display:flex;flex-direction:column;gap:0;max-width:760px;margin:0 auto}
-    .citem{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid rgba(165,95,245,.1);transition:background .3s}
+    .citem{display:grid;grid-template-columns:120px 1fr auto 72px;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid rgba(165,95,245,.1);transition:background .3s}
     .citem:last-child{border-bottom:none}
+    .cthumb{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid rgba(165,95,245,.2);flex-shrink:0}
+    .cthumb-empty{width:72px;height:72px;flex-shrink:0}
     .cdate{text-align:center;flex-shrink:0}
     .cdate-day{font-size:2rem;font-weight:700;color:var(--p);line-height:1}
     .cdate-mon{font-size:.55rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--p);opacity:.6;margin-top:2px}
@@ -218,6 +220,7 @@
     @media(max-width:768px){
       .citem{grid-template-columns:80px 1fr;gap:14px}
       .ctag{display:none}
+      .cthumb,.cthumb-empty{display:none}
       .cdate-day{font-size:1.5rem}
     }
 
@@ -432,36 +435,43 @@
         <div class="cdate"><div class="cdate-day">28</div><div class="cdate-mon">Nov</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">Casas Colombia</div><div class="cvenue">Embajada de Colombia · Berlín</div></div>
         <span class="ctag">Cultural</span>
+        <div class="cthumb-empty"></div>
       </div>
       <div class="citem rv d1">
         <div class="cdate"><div class="cdate-day">04</div><div class="cdate-mon">Oct</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">5 Years of Calentura Fest</div><div class="cvenue">Panke Culture, Berlin · con Cayéye</div></div>
-        <span class="ctag">Club</span>
+        <span class="ctag">Festival</span>
+        <img class="cthumb" src="assets/Screenshot 2026-06-17 212551.png" alt="Calentura flyer" loading="lazy">
       </div>
       <div class="citem rv d2">
         <div class="cdate"><div class="cdate-day">4–6</div><div class="cdate-mon">Sep</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">Memorias Danza Teatro</div><div class="cvenue">ACUD Theater · Berlín</div></div>
         <span class="ctag">Theater</span>
+        <div class="cthumb-empty"></div>
       </div>
       <div class="citem rv d3">
         <div class="cdate"><div class="cdate-day">23</div><div class="cdate-mon">Ago</div><div class="cdate-yr">2024</div></div>
         <div class="cinfo"><div class="cname">La Noche — Celebrating Afrolatin Culture</div><div class="cvenue">Maaya, Revalerstr. 99 · Berlín</div></div>
         <span class="ctag">Club</span>
+        <img class="cthumb" src="assets/Noche 24.jpg" alt="La Noche Maaya flyer" loading="lazy">
       </div>
       <div class="citem rv">
         <div class="cdate"><div class="cdate-day">—</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">Desfile del Carnaval de las Culturas</div><div class="cvenue">Acompañamiento musical a Canoa Folk · Berlín</div></div>
         <span class="ctag">Carnaval</span>
+        <img class="cthumb" src="assets/WfogeTJbmbyOEQWtBKNysZbC.jpg" alt="Desfile Canoa Folk" loading="lazy">
       </div>
       <div class="citem rv d1">
         <div class="cdate"><div class="cdate-day">—</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">Karneval der Kulturen</div><div class="cvenue">Klang Plaza · Berlín · Sábado 14:30h</div></div>
         <span class="ctag">Festival</span>
+        <img class="cthumb" src="assets/jetcdNBfffeZTZlgGoyhzYGg.jpg" alt="KdK Klang Plaza" loading="lazy">
       </div>
       <div class="citem rv d2">
         <div class="cdate"><div class="cdate-day">13</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">La Noche</div><div class="cvenue">Badehaus · Berlín</div></div>
         <span class="ctag">Club</span>
+        <div class="cthumb-empty"></div>
       </div>
     </div>
   </div>
