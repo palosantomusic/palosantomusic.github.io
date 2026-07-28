@@ -75,6 +75,7 @@
   <meta name="twitter:image" content="https://palosantomusic.github.io/assets/asset-6267c0f2.webp"/>
   <link rel="icon" type="image/png" href="assets/asset-1ec4875a.png">
   <link rel="dns-prefetch" href="https://www.youtube.com">
+  <link rel="dns-prefetch" href="https://img.youtube.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@300;400;700&display=swap" rel="stylesheet">
@@ -125,9 +126,10 @@
     .body-text+.body-text{margin-top:22px}
 
     /* ── LISTEN LINK ── */
-    .listen{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--p);text-decoration:none;border:1px solid rgba(165,95,245,.3);padding:10px 22px;border-radius:999px;transition:background .3s,border-color .3s}
+    .listen{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--p);text-decoration:none;border:1px solid rgba(165,95,245,.3);padding:6px 16px 6px 6px;border-radius:999px;transition:background .3s,border-color .3s}
     .listen:hover{background:rgba(165,95,245,.1);border-color:var(--p)}
     .listen svg{flex-shrink:0}
+    .listen-thumb{width:48px;height:34px;border-radius:999px;object-fit:cover;flex-shrink:0;opacity:.85}
 
     /* ── AIRES ── */
     .aires{display:flex;flex-direction:column;gap:0;margin-top:36px;border:1px solid rgba(165,95,245,.15);border-radius:16px;overflow:hidden}
@@ -248,7 +250,7 @@
     <div class="sh rv"><div class="sr"></div><h2 class="st">Cumbia</h2><div class="sr"></div></div>
     <p class="body-text rv">Cumbia is Colombia's most iconic rhythm, and easily its most well-traveled. This piece of <strong>Colombian roots music</strong> grew out of a meeting of African drums, Indigenous flutes (<em>gaita colombiana</em>, <em>caña de millo</em>), and Spanish melody, and by the 20th century it had spread across Latin America. Every country put its own spin on it — cumbia villera in Argentina, cumbia norteña in Mexico, its own flavors in Peru and Venezuela — but the drum at its core never changed. That's the short version of cumbia's origin; the long version is basically Colombian history.</p>
     <a class="listen rv d1" href="https://www.youtube.com/watch?v=pb6p-guBOu4" target="_blank" rel="noopener">
-      <svg width="16" height="16"><use href="#play-icon"/></svg>
+      <img class="listen-thumb" src="https://img.youtube.com/vi/pb6p-guBOu4/mqdefault.jpg" alt="" loading="lazy">
       Los Gaiteros de San Jacinto — "Fuego de Cumbia"
     </a>
     <div class="img-slot rv d2"><img src="assets/cumbia-pexels-mariamolina.webp" alt="Cumbia dancers in traditional dress, Juan de Acosta, Atlántico, Colombia" loading="lazy"></div>
@@ -269,7 +271,7 @@
           <div class="aire-title">Bullerengue Sentao</div>
           <p class="aire-desc">The slowest of the three, sung seated, with long, melancholic phrases.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=aWI961ZzXW0" target="_blank" rel="noopener">
-            <svg width="14" height="14"><use href="#play-icon"/></svg>
+            <img class="listen-thumb" src="https://img.youtube.com/vi/aWI961ZzXW0/mqdefault.jpg" alt="" loading="lazy" style="width:36px;height:25px">
             Tonada — "Sin ti no puedo vivir"
           </a>
         </div>
@@ -280,7 +282,7 @@
           <div class="aire-title">Fandango de Lengua</div>
           <p class="aire-desc">Quicker, full of <em>leleos</em> (onomatopoeic chants), made for celebration.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=paiqQubBsJQ" target="_blank" rel="noopener">
-            <svg width="14" height="14"><use href="#play-icon"/></svg>
+            <img class="listen-thumb" src="https://img.youtube.com/vi/paiqQubBsJQ/mqdefault.jpg" alt="" loading="lazy" style="width:36px;height:25px">
             Grupo Bahía — "Fandango de Lengua"
           </a>
         </div>
@@ -291,7 +293,7 @@
           <div class="aire-title">Chalupa</div>
           <p class="aire-desc">Upbeat, in a binary rhythm, short verses, loose dancing.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=-5JcYBLihWw" target="_blank" rel="noopener">
-            <svg width="14" height="14"><use href="#play-icon"/></svg>
+            <img class="listen-thumb" src="https://img.youtube.com/vi/-5JcYBLihWw/mqdefault.jpg" alt="" loading="lazy" style="width:36px;height:25px">
             Toño Fernández — "La Chalupa"
           </a>
         </div>
@@ -299,7 +301,7 @@
     </div>
 
     <a class="listen rv d2" href="https://www.youtube.com/watch?v=rj-8fkKR9zM" target="_blank" rel="noopener">
-      <svg width="16" height="16"><use href="#play-icon"/></svg>
+      <img class="listen-thumb" src="https://img.youtube.com/vi/rj-8fkKR9zM/mqdefault.jpg" alt="" loading="lazy">
       See all three aires — Etelvina Maldonado &amp; Encarnación Tovar, Cartagena 1997
     </a>
 
