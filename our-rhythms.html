@@ -96,6 +96,8 @@
     .nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#f5f0eb;opacity:.75;text-decoration:none;transition:opacity .2s}
     .nav-links a:hover{opacity:1}
     .nav-links a.active{opacity:1;color:var(--p)}
+    #lang-btn{background:none;border:1px solid rgba(245,240,235,.25);color:#f5f0eb;font-family:'SUSE',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.1em;padding:3px 10px;border-radius:999px;cursor:pointer;transition:border-color .2s,opacity .2s;opacity:.75}
+    #lang-btn:hover{opacity:1;border-color:rgba(245,240,235,.6)}
 
     /* ── BUTTONS ── */
     .btn{font-family:'SUSE',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1.5px solid;border-radius:999px;transition:all .3s;cursor:pointer;display:inline-block}
@@ -230,26 +232,27 @@
     <img id="topbar-logo" src="assets/asset-426775c8.jpg" alt="Palo Santo">
   </a>
   <nav class="nav-links">
-    <a href="index.html#about">About</a>
-    <a href="index.html#music">Music</a>
-    <a href="index.html#concerts">Concerts</a>
-    <a href="our-rhythms.html" class="active">Our Rhythms</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html#about" data-i18n="nav-about">About</a>
+    <a href="index.html#music" data-i18n="nav-music">Music</a>
+    <a href="index.html#concerts" data-i18n="nav-concerts">Concerts</a>
+    <a href="our-rhythms.html" class="active" data-i18n="nav-rhythms">Our Rhythms</a>
+    <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+    <button id="lang-btn" aria-label="Switch language">ES</button>
   </nav>
 </div>
 
 <!-- ── HERO ── -->
 <section id="hero">
   <p class="htag rv">Palo Santo · Berlin</p>
-  <h1 class="htitle rv d1">Our Rhythms</h1>
-  <p class="hintro rv d2">Colombian Caribbean music isn't one sound — it's a map of Afro-Colombian rhythms born out of resistance, blended across cultures, and still very much alive in every drumbeat. These are the rhythms Palo Santo, a Colombian band based in Berlin, brings to the stage.</p>
+  <h1 class="htitle rv d1" data-i18n="nav-rhythms">Our Rhythms</h1>
+  <p class="hintro rv d2" data-i18n="hero-intro">Colombian Caribbean music isn't one sound — it's a map of Afro-Colombian rhythms born out of resistance, blended across cultures, and still very much alive in every drumbeat. These are the rhythms Palo Santo, a Colombian band based in Berlin, brings to the stage.</p>
 </section>
 
 <!-- ── CUMBIA ── -->
 <section id="cumbia">
   <div class="csec">
     <div class="sh rv"><div class="sr"></div><h2 class="st">Cumbia</h2><div class="sr"></div></div>
-    <p class="body-text rv">Cumbia is Colombia's most iconic rhythm, and easily its most well-traveled. This piece of <strong>Colombian roots music</strong> grew out of a meeting of African drums, Indigenous flutes (<em>gaita colombiana</em>, <em>caña de millo</em>), and Spanish melody, and by the 20th century it had spread across Latin America. Every country put its own spin on it — cumbia villera in Argentina, cumbia norteña in Mexico, its own flavors in Peru and Venezuela — but the drum at its core never changed. That's the short version of cumbia's origin; the long version is basically Colombian history.</p>
+    <p class="body-text rv" data-i18n="cumbia-p1">Cumbia is Colombia's most iconic rhythm, and easily its most well-traveled. This piece of <strong>Colombian roots music</strong> grew out of a meeting of African drums, Indigenous flutes (<em>gaita colombiana</em>, <em>caña de millo</em>), and Spanish melody, and by the 20th century it had spread across Latin America. Every country put its own spin on it — cumbia villera in Argentina, cumbia norteña in Mexico, its own flavors in Peru and Venezuela — but the drum at its core never changed. That's the short version of cumbia's origin; the long version is basically Colombian history.</p>
     <a class="listen rv d1" href="https://www.youtube.com/watch?v=pb6p-guBOu4" target="_blank" rel="noopener">
       <img class="listen-thumb" src="https://img.youtube.com/vi/pb6p-guBOu4/mqdefault.jpg" alt="" loading="lazy">
       Los Gaiteros de San Jacinto — "Fuego de Cumbia"
@@ -263,14 +266,14 @@
 <section id="bullerengue">
   <div class="csec">
     <div class="sh rv"><div class="sr"></div><h2 class="st">Bullerengue</h2><div class="sr"></div></div>
-    <p class="body-text rv">Born in the <em>palenques</em> of Bolívar, Córdoba, and Sucre — communities founded by formerly enslaved people — <strong>bullerengue</strong> is first and foremost a women's song, a <strong>Colombian folk music</strong> tradition passed down voice to voice for generations. It comes in three "aires," or styles:</p>
+    <p class="body-text rv" data-i18n="bull-p1">Born in the <em>palenques</em> of Bolívar, Córdoba, and Sucre — communities founded by formerly enslaved people — <strong>bullerengue</strong> is first and foremost a women's song, a <strong>Colombian folk music</strong> tradition passed down voice to voice for generations. It comes in three "aires," or styles:</p>
 
     <div class="aires rv d1">
       <div class="aire">
         <div class="aire-num">1</div>
         <div>
           <div class="aire-title">Bullerengue Sentao</div>
-          <p class="aire-desc">The slowest of the three, sung seated, with long, melancholic phrases.</p>
+          <p class="aire-desc" data-i18n="aire1-desc">The slowest of the three, sung seated, with long, melancholic phrases.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=aWI961ZzXW0" target="_blank" rel="noopener">
             <img class="listen-thumb" src="https://img.youtube.com/vi/aWI961ZzXW0/mqdefault.jpg" alt="" loading="lazy">
             Tonada — "Sin ti no puedo vivir"
@@ -281,7 +284,7 @@
         <div class="aire-num">2</div>
         <div>
           <div class="aire-title">Fandango de Lengua</div>
-          <p class="aire-desc">Quicker, full of <em>leleos</em> (onomatopoeic chants), made for celebration.</p>
+          <p class="aire-desc" data-i18n="aire2-desc">Quicker, full of <em>leleos</em> (onomatopoeic chants), made for celebration.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=paiqQubBsJQ" target="_blank" rel="noopener">
             <img class="listen-thumb" src="https://img.youtube.com/vi/paiqQubBsJQ/mqdefault.jpg" alt="" loading="lazy">
             Grupo Bahía — "Fandango de Lengua"
@@ -292,7 +295,7 @@
         <div class="aire-num">3</div>
         <div>
           <div class="aire-title">Chalupa</div>
-          <p class="aire-desc">Upbeat, in a binary rhythm, short verses, loose dancing.</p>
+          <p class="aire-desc" data-i18n="aire3-desc">Upbeat, in a binary rhythm, short verses, loose dancing.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=-5JcYBLihWw" target="_blank" rel="noopener">
             <img class="listen-thumb" src="https://img.youtube.com/vi/-5JcYBLihWw/mqdefault.jpg" alt="" loading="lazy">
             Toño Fernández — "La Chalupa"
@@ -307,7 +310,7 @@
     </a>
 
     <div class="voices rv d3">
-      <p>Voices like Totó la Momposina, <a href="https://www.youtube.com/watch?v=JCqEKekJ7Gw" target="_blank" rel="noopener">Petrona Martínez</a> (2021 Latin Grammy for Best Folk Album), and Etelvina Maldonado carried this tradition — and this Barranquilla Carnival music energy — from the courtyards of María la Baja and Puerto Escondido onto international stages, without losing its roots.</p>
+      <p data-i18n="bull-voices">Voices like Totó la Momposina, <a href="https://www.youtube.com/watch?v=JCqEKekJ7Gw" target="_blank" rel="noopener">Petrona Martínez</a> (2021 Latin Grammy for Best Folk Album), and Etelvina Maldonado carried this tradition — and this Barranquilla Carnival music energy — from the courtyards of María la Baja and Puerto Escondido onto international stages, without losing its roots.</p>
     </div>
 
     <div class="img-slot rv" style="margin-top:32px"><img src="assets/bullerengue-jessica-cardona.webp" alt="Bullerengue performance, 2023" loading="lazy"></div>
@@ -319,9 +322,9 @@
 <section id="about-ps">
   <div class="csec">
     <div class="sh rv"><div class="sr"></div><h2 class="st">Palo Santo</h2><div class="sr"></div></div>
-    <p class="body-text rv">We're a <strong>Colombian band based in Berlin</strong>, playing traditional <strong>Colombian dance music</strong> with a modern edge. Our setup runs on <em>alegre</em> drum, <em>tambora</em>, and <em>gaita</em> — real Colombian percussion — mixed with electric bass and guitar when the moment calls for it. Some nights we sound like a backyard party back home; other nights, like a Latin band in Berlin working a festival stage.</p>
-    <p class="body-text rv d1">Cumbia, puya, mapalé, and bullerengue, played the way they should be: rooted in where they came from, free to go wherever we take them. We also bring porro into the set, and dip into champeta when the crowd wants something more contemporary — all part of the same <strong>Atlantic coast music</strong> tradition that raised us.</p>
-    <p class="body-text rv d2" style="margin-top:22px">Looking to book a <strong>Colombian band in Berlin</strong> or across Europe for your next event, wedding, or festival? <a href="mailto:palosantomusicberlin@gmail.com" style="color:var(--p);text-decoration:none">Palo Santo brings Caribbean music, live, wherever you need it.</a></p>
+    <p class="body-text rv" data-i18n="ps-p1">We're a <strong>Colombian band based in Berlin</strong>, playing traditional <strong>Colombian dance music</strong> with a modern edge. Our setup runs on <em>alegre</em> drum, <em>tambora</em>, and <em>gaita</em> — real Colombian percussion — mixed with electric bass and guitar when the moment calls for it. Some nights we sound like a backyard party back home; other nights, like a Latin band in Berlin working a festival stage.</p>
+    <p class="body-text rv d1" data-i18n="ps-p2">Cumbia, puya, mapalé, and bullerengue, played the way they should be: rooted in where they came from, free to go wherever we take them. We also bring porro into the set, and dip into champeta when the crowd wants something more contemporary — all part of the same <strong>Atlantic coast music</strong> tradition that raised us.</p>
+    <p class="body-text rv d2" style="margin-top:22px" data-i18n="ps-p3">Looking to book a <strong>Colombian band in Berlin</strong> or across Europe for your next event, wedding, or festival? <a href="mailto:palosantomusicberlin@gmail.com" style="color:var(--p);text-decoration:none">Palo Santo brings Caribbean music, live, wherever you need it.</a></p>
   </div>
 </section>
 
@@ -331,32 +334,20 @@
     <div class="sh rv"><div class="sr"></div><h2 class="st">FAQ</h2><div class="sr"></div></div>
     <div class="faq-list rv d1">
       <div class="faq-item">
-        <button class="faq-q">
-          What is bullerengue?
-          <svg width="20" height="20"><use href="#plus-icon"/></svg>
-        </button>
-        <div class="faq-a"><p>Bullerengue is an Afro-Colombian song and dance tradition from Colombia's Caribbean coast, originally sung by women in communities founded by formerly enslaved people. It has three styles, or "aires": bullerengue sentao, fandango de lengua, and chalupa.</p></div>
+        <button class="faq-q"><span data-i18n="faq1-q">What is bullerengue?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq1-a">Bullerengue is an Afro-Colombian song and dance tradition from Colombia's Caribbean coast, originally sung by women in communities founded by formerly enslaved people. It has three styles, or "aires": bullerengue sentao, fandango de lengua, and chalupa.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">
-          Where did cumbia originate?
-          <svg width="20" height="20"><use href="#plus-icon"/></svg>
-        </button>
-        <div class="faq-a"><p>Cumbia originated on Colombia's Caribbean coast from a blend of African, Indigenous, and Spanish musical traditions during the colonial era, later spreading across Latin America.</p></div>
+        <button class="faq-q"><span data-i18n="faq2-q">Where did cumbia originate?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq2-a">Cumbia originated on Colombia's Caribbean coast from a blend of African, Indigenous, and Spanish musical traditions during the colonial era, later spreading across Latin America.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">
-          What instruments does Palo Santo play?
-          <svg width="20" height="20"><use href="#plus-icon"/></svg>
-        </button>
-        <div class="faq-a"><p>Palo Santo plays traditional Colombian percussion — alegre drum, tambora, and gaita — alongside electric bass and guitar.</p></div>
+        <button class="faq-q"><span data-i18n="faq3-q">What instruments does Palo Santo play?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq3-a">Palo Santo plays traditional Colombian percussion — alegre drum, tambora, and gaita — alongside electric bass and guitar.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">
-          Can I book Palo Santo for an event?
-          <svg width="20" height="20"><use href="#plus-icon"/></svg>
-        </button>
-        <div class="faq-a"><p>Yes — Palo Santo is available for bookings in Berlin and across Europe, including weddings, festivals, and private events.</p></div>
+        <button class="faq-q"><span data-i18n="faq4-q">Can I book Palo Santo for an event?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq4-a">Yes — Palo Santo is available for bookings in Berlin and across Europe, including weddings, festivals, and private events.</p></div>
       </div>
     </div>
   </div>
@@ -364,23 +355,23 @@
 
 <!-- ── CTA ── -->
 <section id="cta">
-  <p class="cta-tag rv">Book Palo Santo</p>
-  <h2 class="cta-title rv d1">Bring these rhythms to your stage</h2>
-  <p class="cta-sub rv d2">Available for festivals, clubs, cultural events and private bookings across Europe.</p>
-  <a href="mailto:palosantomusicberlin@gmail.com" class="btn btn-p rv d3">Get in Touch</a>
+  <p class="cta-tag rv" data-i18n="cta-tag">Book Palo Santo</p>
+  <h2 class="cta-title rv d1" data-i18n="cta-title">Bring these rhythms to your stage</h2>
+  <p class="cta-sub rv d2" data-i18n="cta-sub">Available for festivals, clubs, cultural events and private bookings across Europe.</p>
+  <a href="mailto:palosantomusicberlin@gmail.com" class="btn btn-p rv d3" data-i18n="cta-btn">Get in Touch</a>
 </section>
 
 <footer>
   <a href="index.html" class="footer-logo" aria-label="Back to home">
     <svg viewBox="0 0 1010 864" xmlns="http://www.w3.org/2000/svg"><use href="#ps-logo"/></svg>
   </a>
-  <p class="fc">© 2026 Palo Santo. All rights reserved.</p>
+  <p class="fc" data-i18n="footer-copy">© 2026 Palo Santo. All rights reserved.</p>
   <nav class="fl">
-    <a href="index.html#about">About</a>
-    <a href="index.html#music">Music</a>
-    <a href="index.html#concerts">Concerts</a>
-    <a href="our-rhythms.html">Our Rhythms</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html#about" data-i18n="nav-about">About</a>
+    <a href="index.html#music" data-i18n="nav-music">Music</a>
+    <a href="index.html#concerts" data-i18n="nav-concerts">Concerts</a>
+    <a href="our-rhythms.html" data-i18n="nav-rhythms">Our Rhythms</a>
+    <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
   </nav>
 </footer>
 
@@ -398,6 +389,64 @@
       if(!isOpen) item.classList.add('open')
     })
   })
+</script>
+<script>
+// ── i18n ──
+const T={
+  en:{
+    'nav-about':'About','nav-music':'Music','nav-concerts':'Concerts','nav-rhythms':'Our Rhythms','nav-contact':'Contact',
+    'hero-intro':'Colombian Caribbean music isn\'t one sound — it\'s a map of Afro-Colombian rhythms born out of resistance, blended across cultures, and still very much alive in every drumbeat. These are the rhythms Palo Santo, a Colombian band based in Berlin, brings to the stage.',
+    'cumbia-p1':'Cumbia is Colombia\'s most iconic rhythm, and easily its most well-traveled. This piece of <strong>Colombian roots music</strong> grew out of a meeting of African drums, Indigenous flutes (<em>gaita colombiana</em>, <em>caña de millo</em>), and Spanish melody, and by the 20th century it had spread across Latin America. Every country put its own spin on it — cumbia villera in Argentina, cumbia norteña in Mexico, its own flavors in Peru and Venezuela — but the drum at its core never changed. That\'s the short version of cumbia\'s origin; the long version is basically Colombian history.',
+    'bull-p1':'Born in the <em>palenques</em> of Bolívar, Córdoba, and Sucre — communities founded by formerly enslaved people — <strong>bullerengue</strong> is first and foremost a women\'s song, a <strong>Colombian folk music</strong> tradition passed down voice to voice for generations. It comes in three "aires," or styles:',
+    'aire1-desc':'The slowest of the three, sung seated, with long, melancholic phrases.',
+    'aire2-desc':'Quicker, full of <em>leleos</em> (onomatopoeic chants), made for celebration.',
+    'aire3-desc':'Upbeat, in a binary rhythm, short verses, loose dancing.',
+    'bull-voices':'Voices like Totó la Momposina, <a href="https://www.youtube.com/watch?v=JCqEKekJ7Gw" target="_blank" rel="noopener">Petrona Martínez</a> (2021 Latin Grammy for Best Folk Album), and Etelvina Maldonado carried this tradition — and this Barranquilla Carnival music energy — from the courtyards of María la Baja and Puerto Escondido onto international stages, without losing its roots.',
+    'ps-p1':'We\'re a <strong>Colombian band based in Berlin</strong>, playing traditional <strong>Colombian dance music</strong> with a modern edge. Our setup runs on <em>alegre</em> drum, <em>tambora</em>, and <em>gaita</em> — real Colombian percussion — mixed with electric bass and guitar when the moment calls for it. Some nights we sound like a backyard party back home; other nights, like a Latin band in Berlin working a festival stage.',
+    'ps-p2':'Cumbia, puya, mapalé, and bullerengue, played the way they should be: rooted in where they came from, free to go wherever we take them. We also bring porro into the set, and dip into champeta when the crowd wants something more contemporary — all part of the same <strong>Atlantic coast music</strong> tradition that raised us.',
+    'ps-p3':'Looking to book a <strong>Colombian band in Berlin</strong> or across Europe for your next event, wedding, or festival? <a href="mailto:palosantomusicberlin@gmail.com" style="color:var(--p);text-decoration:none">Palo Santo brings Caribbean music, live, wherever you need it.</a>',
+    'faq1-q':'What is bullerengue?','faq1-a':'Bullerengue is an Afro-Colombian song and dance tradition from Colombia\'s Caribbean coast, originally sung by women in communities founded by formerly enslaved people. It has three styles, or "aires": bullerengue sentao, fandango de lengua, and chalupa.',
+    'faq2-q':'Where did cumbia originate?','faq2-a':'Cumbia originated on Colombia\'s Caribbean coast from a blend of African, Indigenous, and Spanish musical traditions during the colonial era, later spreading across Latin America.',
+    'faq3-q':'What instruments does Palo Santo play?','faq3-a':'Palo Santo plays traditional Colombian percussion — alegre drum, tambora, and gaita — alongside electric bass and guitar.',
+    'faq4-q':'Can I book Palo Santo for an event?','faq4-a':'Yes — Palo Santo is available for bookings in Berlin and across Europe, including weddings, festivals, and private events.',
+    'cta-tag':'Book Palo Santo','cta-title':'Bring these rhythms to your stage','cta-sub':'Available for festivals, clubs, cultural events and private bookings across Europe.','cta-btn':'Get in Touch',
+    'footer-copy':'© 2026 Palo Santo. All rights reserved.'
+  },
+  es:{
+    'nav-about':'Nosotros','nav-music':'Música','nav-concerts':'Conciertos','nav-rhythms':'Nuestros Ritmos','nav-contact':'Contacto',
+    'hero-intro':'La música del Caribe colombiano no es un solo sonido — es un mapa de ritmos afrocolombianos nacidos de la resistencia, entretejidos entre culturas y que siguen muy vivos en cada golpe de tambor. Estos son los ritmos que Palo Santo, una banda colombiana con sede en Berlín, lleva al escenario.',
+    'cumbia-p1':'La cumbia es el ritmo más icónico de Colombia y, sin duda, el más viajado. Esta joya de la <strong>música de raíces colombianas</strong> nació del encuentro entre tambores africanos, flautas indígenas (<em>gaita colombiana</em>, <em>caña de millo</em>) y melodía española, y para el siglo XX ya había conquistado toda América Latina. Cada país le puso su sello — cumbia villera en Argentina, cumbia norteña en México, sus propios sabores en Perú y Venezuela — pero el tambor en su centro nunca cambió. Esa es la versión corta del origen de la cumbia; la larga es, básicamente, la historia de Colombia.',
+    'bull-p1':'Nacido en los <em>palenques</em> de Bolívar, Córdoba y Sucre — comunidades fundadas por personas esclavizadas que lograron su libertad — el <strong>bullerengue</strong> es ante todo un canto de mujeres, una tradición de <strong>música folclórica colombiana</strong> transmitida de voz en voz por generaciones. Se presenta en tres "aires" o estilos:',
+    'aire1-desc':'El más lento de los tres, cantado sentado, con frases largas y melancólicas.',
+    'aire2-desc':'Más rápido, lleno de <em>leleos</em> (cantos onomatopéyicos), hecho para celebrar.',
+    'aire3-desc':'Alegre, en ritmo binario, versos cortos y baile suelto.',
+    'bull-voices':'Voces como Totó la Momposina, <a href="https://www.youtube.com/watch?v=JCqEKekJ7Gw" target="_blank" rel="noopener">Petrona Martínez</a> (Grammy Latino 2021 al Mejor Álbum Folclórico) y Etelvina Maldonado llevaron esta tradición — y la energía del Carnaval de Barranquilla — desde los patios de María la Baja y Puerto Escondido hasta los escenarios internacionales, sin perder sus raíces.',
+    'ps-p1':'Somos una <strong>banda colombiana con sede en Berlín</strong>, tocando <strong>música bailable colombiana</strong> tradicional con un toque contemporáneo. Nuestro sonido se construye sobre el tambor <em>alegre</em>, la <em>tambora</em> y la <em>gaita</em> — percusión colombiana auténtica — combinada con bajo eléctrico y guitarra cuando el momento lo pide. Algunas noches sonamos como una fiesta de patio en casa; otras, como una banda latina en Berlín tomando un escenario de festival.',
+    'ps-p2':'Cumbia, puya, mapalé y bullerengue, tocados como deben ser: arraigados en su origen, libres de ir a donde los llevemos. También llevamos el porro al set y nos adentramos en la champeta cuando el público quiere algo más contemporáneo — todo parte de la misma tradición de la <strong>música de la costa Atlántica</strong> que nos formó.',
+    'ps-p3':'¿Buscas contratar una <strong>banda colombiana en Berlín</strong> o en toda Europa para tu próximo evento, boda o festival? <a href="mailto:palosantomusicberlin@gmail.com" style="color:var(--p);text-decoration:none">Palo Santo lleva la música caribeña, en vivo, a donde lo necesites.</a>',
+    'faq1-q':'¿Qué es el bullerengue?','faq1-a':'El bullerengue es una tradición afrocolombiana de canto y danza de la costa Caribe de Colombia, cantado originalmente por mujeres en comunidades fundadas por personas esclavizadas. Tiene tres estilos o "aires": bullerengue sentao, fandango de lengua y chalupa.',
+    'faq2-q':'¿Dónde se originó la cumbia?','faq2-a':'La cumbia se originó en la costa Caribe de Colombia a partir de una mezcla de tradiciones musicales africanas, indígenas y españolas durante la época colonial, y luego se extendió por toda América Latina.',
+    'faq3-q':'¿Qué instrumentos toca Palo Santo?','faq3-a':'Palo Santo toca percusión colombiana tradicional — tambor alegre, tambora y gaita — junto con bajo eléctrico y guitarra.',
+    'faq4-q':'¿Puedo contratar a Palo Santo para un evento?','faq4-a':'Sí — Palo Santo está disponible para contrataciones en Berlín y en toda Europa, incluyendo bodas, festivales y eventos privados.',
+    'cta-tag':'Contrata a Palo Santo','cta-title':'Lleva estos ritmos a tu escenario','cta-sub':'Disponibles para festivales, clubes, eventos culturales y contrataciones privadas en toda Europa.','cta-btn':'Escríbenos',
+    'footer-copy':'© 2026 Palo Santo. Todos los derechos reservados.'
+  }
+};
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(T[lang][k]!==undefined)el.innerHTML=T[lang][k];
+  });
+  const btn=document.getElementById('lang-btn');
+  if(btn)btn.textContent=lang==='en'?'ES':'EN';
+  document.documentElement.lang=lang;
+  localStorage.setItem('ps-lang',lang);
+}
+const initLang=localStorage.getItem('ps-lang')||'en';
+applyLang(initLang);
+document.getElementById('lang-btn').addEventListener('click',()=>{
+  applyLang((localStorage.getItem('ps-lang')||'en')==='en'?'es':'en');
+});
 </script>
 </body>
 </html>
