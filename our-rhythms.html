@@ -90,10 +90,10 @@
     body{background-color:var(--dk);background-image:url('assets/asset-3cb5addc.svg');background-repeat:repeat;background-size:500px 500px;background-attachment:fixed;color:var(--w);font-family:'SUSE',sans-serif;font-weight:300;overflow-x:hidden}
 
     /* ── NAV BAR ── */
-    #topbar{position:fixed;top:0;left:0;right:0;z-index:201;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(10,8,9,.96)}
+    #topbar{position:fixed;top:0;left:0;right:0;z-index:201;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(10,8,9,.96)}
     #topbar-logo{display:block;height:28px;width:auto;cursor:pointer}
-    .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-links a{font-size:.58rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--w);opacity:.45;text-decoration:none;transition:opacity .3s}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#f5f0eb;opacity:.75;text-decoration:none;transition:opacity .2s}
     .nav-links a:hover{opacity:1}
     .nav-links a.active{opacity:1;color:var(--p)}
 
@@ -107,6 +107,7 @@
     .htag{font-size:.6rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--p);opacity:.8;margin-bottom:16px}
     .htitle{font-size:clamp(2rem,5vw,3.6rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.1;margin-bottom:28px}
     .hintro{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;line-height:2;opacity:.7}
+    .hintro,.body-text,.faq-a p{text-align:justify}
 
     /* ── SHARED ── */
     .sh{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:44px}
@@ -187,9 +188,9 @@
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
     @media(max-width:768px){
-      #topbar{padding:0 20px;height:52px}
+      #topbar{padding:0 16px;height:44px}
       .nav-links{gap:14px}
-      .nav-links a{font-size:.5rem;letter-spacing:.12em}
+      .nav-links a{font-size:.65rem}
       #hero{padding:110px 24px 60px}
       .csec{padding:60px 24px}
       .faq-inner{padding:60px 24px}
@@ -271,7 +272,7 @@
           <div class="aire-title">Bullerengue Sentao</div>
           <p class="aire-desc">The slowest of the three, sung seated, with long, melancholic phrases.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=aWI961ZzXW0" target="_blank" rel="noopener">
-            <img class="listen-thumb" src="https://img.youtube.com/vi/aWI961ZzXW0/mqdefault.jpg" alt="" loading="lazy" style="width:48px;height:34px">
+            <img class="listen-thumb" src="https://img.youtube.com/vi/aWI961ZzXW0/mqdefault.jpg" alt="" loading="lazy">
             Tonada — "Sin ti no puedo vivir"
           </a>
         </div>
@@ -282,7 +283,7 @@
           <div class="aire-title">Fandango de Lengua</div>
           <p class="aire-desc">Quicker, full of <em>leleos</em> (onomatopoeic chants), made for celebration.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=paiqQubBsJQ" target="_blank" rel="noopener">
-            <img class="listen-thumb" src="https://img.youtube.com/vi/paiqQubBsJQ/mqdefault.jpg" alt="" loading="lazy" style="width:48px;height:34px">
+            <img class="listen-thumb" src="https://img.youtube.com/vi/paiqQubBsJQ/mqdefault.jpg" alt="" loading="lazy">
             Grupo Bahía — "Fandango de Lengua"
           </a>
         </div>
@@ -293,7 +294,7 @@
           <div class="aire-title">Chalupa</div>
           <p class="aire-desc">Upbeat, in a binary rhythm, short verses, loose dancing.</p>
           <a class="aire-listen" href="https://www.youtube.com/watch?v=-5JcYBLihWw" target="_blank" rel="noopener">
-            <img class="listen-thumb" src="https://img.youtube.com/vi/-5JcYBLihWw/mqdefault.jpg" alt="" loading="lazy" style="width:48px;height:34px">
+            <img class="listen-thumb" src="https://img.youtube.com/vi/-5JcYBLihWw/mqdefault.jpg" alt="" loading="lazy">
             Toño Fernández — "La Chalupa"
           </a>
         </div>
