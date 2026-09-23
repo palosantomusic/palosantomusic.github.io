@@ -214,8 +214,8 @@
     .clist{display:flex;flex-direction:column;gap:0;max-width:760px;margin:0 auto}
     .citem{display:grid;grid-template-columns:120px 1fr auto 72px;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid rgba(165,95,245,.1);transition:background .3s}
     .citem:last-child{border-bottom:none}
-    .cthumb{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid rgba(165,95,245,.2);flex-shrink:0;transition:transform .3s,box-shadow .3s;cursor:zoom-in}
-    .cthumb:hover{transform:scale(3.5);box-shadow:0 8px 32px rgba(0,0,0,.6);z-index:10;position:relative}
+    .cthumb{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid rgba(165,95,245,.2);flex-shrink:0;cursor:zoom-in}
+    #cthumb-preview{position:fixed;z-index:9999;pointer-events:none;display:none;border-radius:12px;border:1px solid rgba(165,95,245,.3);box-shadow:0 16px 48px rgba(0,0,0,.7);max-width:320px;max-height:320px;object-fit:contain;background:var(--dk)}
     .cthumb-empty{width:72px;height:72px;flex-shrink:0}
     .cmore-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px auto 0;background:none;border:1px solid rgba(165,95,245,.25);color:var(--p);font-family:'SUSE',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:10px 24px;border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s}
     .cmore-btn:hover{border-color:var(--p);background:rgba(165,95,245,.08)}
@@ -583,6 +583,23 @@
     if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
   }),{threshold:.1});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // ── Concert thumbnail preview ──
+  const prev=document.createElement('img');
+  prev.id='cthumb-preview';
+  document.body.appendChild(prev);
+  document.querySelectorAll('.cthumb').forEach(img=>{
+    img.addEventListener('mouseenter',e=>{
+      prev.src=img.src;
+      prev.style.display='block';
+    });
+    img.addEventListener('mousemove',e=>{
+      const x=e.clientX,y=e.clientY,w=window.innerWidth,h=window.innerHeight;
+      prev.style.left=(x+20+320>w?x-340:x+20)+'px';
+      prev.style.top=(y+320>h?y-320:y+10)+'px';
+    });
+    img.addEventListener('mouseleave',()=>{prev.style.display='none';});
+  });
 
   // ── Show more concerts ──
   const cmoreBtn=document.getElementById('cmore-btn');
