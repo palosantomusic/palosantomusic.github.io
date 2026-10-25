@@ -126,7 +126,8 @@
     /* ── MUSIC ── */
     #music{background:transparent;overflow:visible}
     #contact{background:var(--dk);max-width:100%;padding:0}
-    .epg{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:0 auto;padding:30px;overflow:visible}
+    .epg{display:flex;justify-content:center;gap:24px;max-width:680px;margin:0 auto;padding:30px;overflow:visible}
+    .epg .epc{width:clamp(260px,40vw,320px)}
     .epc{background:transparent;border:1px solid var(--bp);overflow:visible;border-radius:16px;position:relative;transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s}
     .epc:hover{transform:scale(1.06);box-shadow:0 20px 60px rgba(0,0,0,.5)}
     .epc.cs{border-style:dashed;opacity:.6}
