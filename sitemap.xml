@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://palosantomusic.github.io/</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://palosantomusic.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://palosantomusic.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://palosantomusic.github.io/"/>
+  </url>
+  <url>
+    <loc>https://palosantomusic.github.io/es/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://palosantomusic.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://palosantomusic.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://palosantomusic.github.io/"/>
   </url>
   <url>
     <loc>https://palosantomusic.github.io/our-rhythms.html</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://palosantomusic.github.io/our-rhythms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://palosantomusic.github.io/es/our-rhythms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://palosantomusic.github.io/our-rhythms.html"/>
+  </url>
+  <url>
+    <loc>https://palosantomusic.github.io/es/our-rhythms.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://palosantomusic.github.io/our-rhythms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://palosantomusic.github.io/es/our-rhythms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://palosantomusic.github.io/our-rhythms.html"/>
   </url>
 </urlset>
