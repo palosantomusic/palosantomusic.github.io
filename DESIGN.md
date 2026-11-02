@@ -5,9 +5,7 @@ colors:
   tambora-purple: "#a55ff5"
   tambora-purple-deep: "#8a40e0"
   palenque-red: "#EB3527"
-  maiz-yellow: "#f5c23e"
-  cream: "#fbf3e6"
-  ink: "#1a1214"
+  palenque-red-deep: "#c8261a"
   bone: "#f5f2f0"
   bone-warm: "#e8e4df"
   night: "#0a0809"
@@ -76,12 +74,12 @@ components:
     backgroundColor: "{colors.panel}"
     rounded: "{rounded.md}"
   release-card:
-    backgroundColor: "{colors.cream}"
+    backgroundColor: "{colors.night-violet}"
     rounded: "22px"
     padding: "18px 28px 18px 18px"
   button-release:
-    backgroundColor: "{colors.maiz-yellow}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.palenque-red-deep}"
+    textColor: "{colors.bone}"
     typography: "{typography.label}"
     rounded: "{rounded.pill}"
     padding: "11px 22px"
@@ -113,11 +111,8 @@ A night palette: warm blacks, a bone white for text, and two saturated accents u
 - **Tambora Purple Deep** (#8a40e0): fill colour for solid buttons (Listen Now, Pre-Save, Get in Touch). It is darker than Tambora Purple so white text on it reaches 4.8:1 contrast.
 
 ### Secondary
-- **Palenque Red** (#EB3527): small labels (contact labels, EP status) and the hover colour of outline buttons. It is the red of the logo.
-
-### Tertiary (print / feature accent)
-- **Maíz Yellow** (#f5c23e): taken from the printed brochure. Used only for the featured release: the hard offset shadow and the Listen button (with Ink text, 11:1).
-- **Cream** (#fbf3e6): surface of the featured release card. Text on it uses darker variants: red `#d42a1d` (4.6:1) and purple `#7a35d6` (5.8:1).
+- **Palenque Red** (#EB3527): small labels, the hover colour of outline buttons, and the hard offset shadow of the featured release card. It is the red of the logo.
+- **Palenque Red Deep** (#c8261a): fill of the featured release's Listen button (white text 5:1).
 
 ### Neutral
 - **Bone** (#f5f2f0): main text and headings.
@@ -128,7 +123,7 @@ A night palette: warm blacks, a bone white for text, and two saturated accents u
 - **Panel** (#130f17): cards and photo placeholders.
 
 ### Named Rules
-**The Logo Owns the Colour Rule.** Purple and red come from the logo and are the everyday accents. Maíz Yellow and Cream come from the print material and are kept for one featured element per page (the latest release). Don't add other hues: no blue, no green, no gradients between brand colours.
+**The Logo Owns the Colour Rule.** Purple and red come from the logo and stay the only accents, even when a layout is borrowed from print. Don't add new hues: no blue, no green, no yellow, no gradients between brand colours.
 
 **The Readable Fade Rule.** Secondary text is Bone at reduced alpha, never below `rgba(245,242,240,.6)` on Night. Faint text that falls under 4.5:1 is a bug, not a mood.
 
@@ -159,7 +154,7 @@ A single centred column. Content sections use `.sw` (max-width 860px, padding 10
 Mostly flat. Depth comes from tone (Night → Night Raised → Panel) and from the pattern showing behind sections. Shadows are only for things that really float: the lightbox, the concert flyer preview, and lifted photo/EP cards.
 
 ### Shadow Vocabulary
-- **Print Offset** (`box-shadow: 10px 10px 0 #f5c23e`): hard yellow shadow on the featured release card, as on the brochure. It grows to 13px on hover and shrinks to 6px when pressed, so the card feels like it pushes in.
+- **Print Offset** (`box-shadow: 10px 10px 0 #EB3527`): hard red shadow on the featured release card, a layout borrowed from the brochure. It grows to 13px on hover and shrinks to 6px when pressed, so the card feels like it pushes in.
 - **Lift** (`box-shadow: 0 24px 60px -12px rgba(0,0,0,.7)`): gallery photos on hover.
 - **Overlay** (`box-shadow: 0 16px 48px rgba(0,0,0,.7)`): floating previews (concert flyer thumbnail).
 
@@ -175,7 +170,7 @@ Pills for anything you press or tag (buttons, chips, language toggle, social ico
 - **Buttons:** pill, uppercase label type. Primary is solid Tambora Purple Deep and turns transparent with purple text on hover. Outline has a bone border at 30% and turns red on hover. Hover effects only apply on devices that can hover (`@media (hover:hover)`).
 - **Navigation:** fixed top bar, always visible. On desktop the links sit in a row next to the ES/EN toggle. On mobile a menu button opens a full-width list with 44px+ tap targets. Escape or tapping a link closes it.
 - **Concert list:** grid of big purple day number, month and year label, name and venue, type chip, and flyer thumbnail.
-- **Featured release card:** horizontal cream card with the artwork on the left, a red "Latest Release" label, a purple title and a yellow "Listen Now" pill. The whole card is clickable, and it stacks tighter (104px artwork) under 560px.
+- **Featured release card:** horizontal dark card (Night Violet, purple border) with the artwork on the left, a red "Latest Release" label, a purple title and a red "Listen Now" pill. The whole card is clickable, and it stacks tighter (104px artwork) under 560px.
 - **Chips:** purple text, purple 20% border, pill.
 - **Gallery marquee:** an endless horizontal strip of photos that opens a lightbox. It stops when reduced motion is requested.
 
