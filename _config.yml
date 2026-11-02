@@ -1,2 +1,4 @@
 exclude:
   - DESIGN.md
+  - CLAUDE.md
+  - tools/

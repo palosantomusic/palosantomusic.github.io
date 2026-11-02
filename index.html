@@ -8,6 +8,13 @@
   <meta name="description" content="Palo Santo is a Colombian Caribbean band in Berlin playing bullerengue, cumbia and Afro-Colombian folklore: puya, mapalé and the rhythms of Colombia's Caribbean coast."/>
   <meta name="keywords" content="Palo Santo, Colombian Caribbean band, Colombian band Berlin, bullerengue, Afro-Colombian, folklore, Colombian folklore, folclor colombiano, cumbia, puya, mapalé, Colombian music, Berlin, Caribbean"/>
   <link rel="canonical" href="https://palosantomusic.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://palosantomusic.github.io/"/>
+  <link rel="alternate" hreflang="es" href="https://palosantomusic.github.io/es/"/>
+  <link rel="alternate" hreflang="x-default" href="https://palosantomusic.github.io/"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_ES"/>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+  <link rel="manifest" href="/manifest.webmanifest"/>
   <meta name="robots" content="index, follow"/>
   <script type="application/ld+json">
   {
@@ -27,12 +34,12 @@
   </script>
   <meta property="og:title" content="Palo Santo · Colombian Caribbean Band in Berlin | Bullerengue · Afro-Colombian · Folklore"/>
   <meta property="og:description" content="Colombian Caribbean band in Berlin · Bullerengue · Afro-Colombian · Folklore"/>
-  <meta property="og:image" content="https://palosantomusic.github.io/assets/asset-6267c0f2.webp"/>
+  <meta property="og:image" content="https://palosantomusic.github.io/assets/og-image.jpg"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Palo Santo · Colombian Caribbean Band in Berlin | Bullerengue · Afro-Colombian · Folklore"/>
   <meta name="twitter:description" content="Colombian Caribbean band in Berlin · Bullerengue · Afro-Colombian · Folklore"/>
-  <meta name="twitter:image" content="https://palosantomusic.github.io/assets/asset-6267c0f2.webp"/>
+  <meta name="twitter:image" content="https://palosantomusic.github.io/assets/og-image.jpg"/>
   <link rel="icon" type="image/png" href="assets/asset-1ec4875a.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -385,6 +392,7 @@
     .marquee-wrap.paused #marquee-toggle .i-pause{display:none}
     @media(hover:hover){#marquee-toggle:hover{background:rgba(165,95,245,.45)}}
     @media (prefers-reduced-motion: reduce){#marquee-toggle{display:none}}
+    a#lang-btn{text-decoration:none;display:inline-flex;align-items:center}
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
@@ -452,7 +460,7 @@
     <img width="200" height="200" id="topbar-logo" src="assets/asset-426775c8.jpg" alt="Palo Santo">
   </a>
   <div class="tb-right">
-    <button id="lang-btn" aria-label="Switch language">ES</button>
+    <a id="lang-btn" href="es/" hreflang="es" lang="es" aria-label="Ver en español">ES</a>
     <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="topbar-nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path class="mb-top" d="M4 8h16"/><path class="mb-bot" d="M4 16h16"/></svg></button>
   <nav id="topbar-nav">
     <a href="#about" data-i18n="nav-about">About</a>
@@ -472,7 +480,7 @@
   <div class="hfade"></div>
   <div class="hframe"></div>
   <div class="hcontent">
-    <h1 class="sr-only">Palo Santo · Colombian Caribbean music from Berlin</h1>
+    <h1 class="sr-only" data-i18n="hero-h1">Palo Santo · Colombian Caribbean music from Berlin</h1>
     <div class="hlogo" id="hlogo">
       <svg viewBox="0 0 1010 864" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <use href="#ps-logo"/>
@@ -626,7 +634,7 @@
       </div>
     </div>
     <button class="cmore-btn" id="cmore-btn" aria-expanded="false">
-      <span id="cmore-label">Show more</span>
+      <span id="cmore-label" data-i18n="concerts-more">Show more</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
     </button>
   </div>
@@ -721,7 +729,7 @@
         el.style.display=open?'grid':'none';
         if(open)io.observe(el);
       });
-      const lang=localStorage.getItem('ps-lang')||'en';
+      const lang=document.documentElement.lang==='es'?'es':'en';
       cmoreLabel.textContent=open?(lang==='es'?'Ver menos':'Show less'):(lang==='es'?'Ver más':'Show more');
     });
   }
@@ -921,7 +929,7 @@ const T={
     'about-p3':'So the range is wide: they can <em>envenenar</em> a song until the dancefloor doesn\'t know what hit it, or strip everything back and let the tambora speak for itself. Both feel like home.',
     'about-tag':'Afro Colombian Caribbean Rhythms',
     'about-rhythms-link':'If you wanna know more about our rhythms <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">click here!</a>',
-    'ep-soon-tag':'Latest Release','ep-listen':'Listen Now',
+    'ep-soon-tag':'Latest Release','ep-listen':'Listen Now','hero-h1':'Palo Santo · Colombian Caribbean music from Berlin','concerts-more':'Show more',
     'concerts-title':'Recent Concerts',
     'footer-copy':'© 2026 Palo Santo. All rights reserved.'
   },
@@ -933,7 +941,7 @@ const T={
     'about-p3':'El rango es amplio: pueden envenenar una canción hasta que la pista no sepa qué la golpeó, o volver a lo esencial y dejar que la tambora hable sola. Los dos se sienten como en casa.',
     'about-tag':'Ritmos Afrocolombianos del Caribe',
     'about-rhythms-link':'¿Quieres saber más sobre nuestros ritmos? <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">¡Haz clic aquí!</a>',
-    'ep-soon-tag':'Nuevo lanzamiento','ep-listen':'Escuchar',
+    'ep-soon-tag':'Nuevo lanzamiento','ep-listen':'Escuchar','hero-h1':'Palo Santo · Música del Caribe colombiano desde Berlín','concerts-more':'Ver más',
     'concerts-title':'Conciertos Recientes',
     'footer-copy':'© 2026 Palo Santo. Todos los derechos reservados.'
   }
@@ -943,15 +951,14 @@ function applyLang(lang){
     const k=el.dataset.i18n;
     if(T[lang][k]!==undefined)el.innerHTML=T[lang][k];
   });
-  const btn=document.getElementById('lang-btn');
-  if(btn)btn.textContent=lang==='en'?'ES':'EN';
   document.documentElement.lang=lang;
-  localStorage.setItem('ps-lang',lang);
 }
-const initLang=localStorage.getItem('ps-lang')||'en';
-applyLang(initLang);
-document.getElementById('lang-btn').addEventListener('click',()=>{
-  applyLang((localStorage.getItem('ps-lang')||'en')==='en'?'es':'en');
+const PAGE_LANG=document.documentElement.lang==='es'?'es':'en';
+applyLang(PAGE_LANG);
+document.getElementById('lang-btn').addEventListener('click',e=>{
+  const a=e.currentTarget;
+  try{localStorage.setItem('ps-lang',PAGE_LANG==='en'?'es':'en')}catch(_){}
+  if(location.hash){e.preventDefault();location.href=a.href+location.hash;}
 });
 </script>
 <script>
