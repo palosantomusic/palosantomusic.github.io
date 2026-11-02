@@ -157,9 +157,12 @@
     .faq-q{width:100%;background:none;border:none;color:var(--w);font-family:'SUSE',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.04em;text-align:left;padding:24px 32px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .3s}
     .faq-q svg{flex-shrink:0;opacity:.4;transition:transform .3s}
     .faq-item.open .faq-q svg{transform:rotate(45deg);opacity:.8}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-    .faq-item.open .faq-a{max-height:200px}
-    .faq-a p{padding:0 32px 24px;font-size:.95rem;font-weight:300;line-height:1.9;opacity:.65}
+    .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s var(--ease-out,ease-out)}
+    .faq-item.open .faq-a{grid-template-rows:1fr}
+    .faq-a>p{overflow:hidden;min-height:0;opacity:0;transition:opacity .2s ease-out}
+    .faq-item.open .faq-a>p{opacity:.65;transition:opacity .25s ease-out .05s}
+    .faq-a>p::after{content:'';display:block;height:24px}
+    .faq-a p{padding:0 32px;font-size:.95rem;font-weight:300;line-height:1.9;opacity:.65}
 
     /* ── CTA ── */
     #cta{text-align:center;padding:100px 64px}
@@ -192,7 +195,21 @@
       footer{padding:32px 20px}
       .aire{padding:20px 20px;gap:16px}
       .faq-q{padding:18px 20px}
-      .faq-a p{padding:0 20px 18px}
+      .faq-a p{padding:0 20px}
+      .faq-a>p::after{height:18px}
+    }
+    /* ── Motion: press feedback + mobile menu drop-down ── */
+    :root{--ease-out:cubic-bezier(.23,1,.32,1)}
+    .btn,.bsub,.soc,.cmore-btn,#lang-btn,.faq-q,#menu-btn{transition:background-color .3s,color .3s,border-color .3s,opacity .2s,transform .16s ease-out}
+    .btn:active,.bsub:active,.soc:active,.cmore-btn:active,#lang-btn:active,#menu-btn:active{transform:scale(.97)}
+    .faq-q:active{transform:scale(.99)}
+    @media(max-width:768px){
+      #topbar #topbar-nav{opacity:0!important;transform:translateY(-8px);transition:opacity .15s ease-in,transform .15s ease-in,display .15s allow-discrete,overlay .15s allow-discrete}
+      #topbar #topbar-nav.open{opacity:1!important;transform:none;transition:opacity .2s var(--ease-out),transform .2s var(--ease-out),display .2s allow-discrete,overlay .2s allow-discrete}
+      @starting-style{#topbar #topbar-nav.open{opacity:0!important;transform:translateY(-8px)}}
+    }
+    @media (prefers-reduced-motion: reduce){
+      #topbar-nav,#topbar-nav.open{transform:none!important}
     }
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -375,19 +392,19 @@
     <div class="sh rv"><div class="sr"></div><h2 class="st">FAQ</h2><div class="sr"></div></div>
     <div class="faq-list rv d1">
       <div class="faq-item">
-        <button class="faq-q"><span data-i18n="faq1-q">What is bullerengue?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq1-q">What is bullerengue?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
         <div class="faq-a"><p data-i18n="faq1-a">Bullerengue is an Afro-Colombian song and dance tradition from Colombia's Caribbean coast, originally sung by women in communities founded by formerly enslaved people. It has three styles, or "aires": bullerengue sentao, fandango de lengua, and chalupa.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q"><span data-i18n="faq2-q">Where did cumbia originate?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq2-q">Where did cumbia originate?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
         <div class="faq-a"><p data-i18n="faq2-a">Cumbia originated on Colombia's Caribbean coast from a blend of African, Indigenous, and Spanish musical traditions during the colonial era, later spreading across Latin America.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q"><span data-i18n="faq3-q">What instruments does Palo Santo play?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq3-q">What instruments does Palo Santo play?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
         <div class="faq-a"><p data-i18n="faq3-a">Palo Santo plays traditional Colombian percussion (alegre drum, tambora, and gaita) alongside electric bass and guitar.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q"><span data-i18n="faq4-q">Can I book Palo Santo for an event?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
+        <button class="faq-q" aria-expanded="false"><span data-i18n="faq4-q">Can I book Palo Santo for an event?</span><svg width="20" height="20"><use href="#plus-icon"/></svg></button>
         <div class="faq-a"><p data-i18n="faq4-a">Yes. Palo Santo is available for bookings in Berlin and across Europe, including weddings, festivals, and private events.</p></div>
       </div>
     </div>
@@ -426,8 +443,8 @@
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item')
       const isOpen = item.classList.contains('open')
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'))
-      if(!isOpen) item.classList.add('open')
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false') })
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true') }
     })
   })
 </script>
