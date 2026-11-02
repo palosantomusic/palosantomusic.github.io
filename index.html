@@ -218,8 +218,6 @@
     .ctag{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 14px;border:1px solid rgba(165,95,245,.3);color:var(--p);border-radius:999px;white-space:nowrap;flex-shrink:0}
     @media(max-width:768px){
       .citem{grid-template-columns:80px 1fr;gap:14px}
-      .ctag{display:none}
-      .cthumb,.cthumb-empty{display:none}
       .cdate-day{font-size:1.5rem}
     }
 
@@ -322,6 +320,34 @@
       .rel-btn{padding:9px 16px;letter-spacing:.12em}
       .rel:active{box-shadow:4px 4px 0 var(--r)}
     }
+    /* ── Concert flyers: tappable thumbnails + full-screen viewer ── */
+    .cthumb-btn{padding:0;border:0;background:none;border-radius:8px;cursor:zoom-in;display:block;line-height:0;transition:transform .16s ease-out}
+    .cthumb-btn:active{transform:scale(.96)}
+    .cthumb-btn:focus-visible{outline:2px solid var(--p);outline-offset:3px}
+    @media(max-width:768px){
+      .citem{grid-template-columns:56px 1fr 56px;grid-template-areas:"date info thumb" "date tag thumb";column-gap:14px;row-gap:6px;padding:18px 0}
+      .citem>.cdate{grid-area:date}
+      .citem>.cinfo{grid-area:info;align-self:end}
+      .citem>.ctag{grid-area:tag;display:inline-block;justify-self:start;align-self:start;padding:3px 10px;font-size:.75rem;letter-spacing:.14em}
+      .citem>.cthumb-btn,.citem>.cthumb-empty{grid-area:thumb}
+      .citem .cthumb,.cthumb-empty{width:56px;height:56px}
+      .cname{overflow-wrap:anywhere}
+    }
+    #fv{position:fixed;inset:0;z-index:9500;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(6,4,6,.94);padding:56px 16px 24px;opacity:0;transition:opacity .2s ease-out;touch-action:pan-y pinch-zoom}
+    #fv.open{display:flex}
+    #fv.visible{opacity:1}
+    #fv-img{max-width:min(92vw,560px);max-height:calc(100svh - 170px);width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 24px 64px rgba(0,0,0,.7);transform-origin:center;will-change:transform;user-select:none;-webkit-user-drag:none}
+    #fv-cap{margin-top:18px;text-align:center;max-width:560px}
+    #fv-name{font-size:1rem;font-weight:700;color:var(--w)}
+    #fv-meta{margin-top:4px;font-size:.8rem;letter-spacing:.08em;color:rgba(245,242,240,.7)}
+    #fv-count{margin-top:8px;font-size:.75rem;letter-spacing:.14em;color:rgba(245,242,240,.6)}
+    .fv-btn{position:absolute;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;border-radius:999px;background:rgba(245,242,240,.08);color:var(--w);cursor:pointer;transition:background-color .2s}
+    .fv-btn:focus-visible{outline:2px solid var(--p);outline-offset:2px}
+    #fv-close{top:12px;right:12px}
+    #fv-prev{left:16px;top:50%;margin-top:-24px}
+    #fv-next{right:16px;top:50%;margin-top:-24px}
+    @media(hover:hover){.fv-btn:hover{background:rgba(165,95,245,.3)}}
+    @media(max-width:768px){#fv-prev,#fv-next{display:none}}
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
@@ -899,6 +925,96 @@ document.getElementById('lang-btn').addEventListener('click',()=>{
     btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
     nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+  })();
+</script>
+<script>
+  // ── Concert flyer viewer (tap / click any flyer; swipe sideways for next, down to close) ──
+  (function(){
+    const L={en:{view:'View flyer',close:'Close',prev:'Previous flyer',next:'Next flyer',of:'of'},es:{view:'Ver flyer',close:'Cerrar',prev:'Flyer anterior',next:'Flyer siguiente',of:'de'}};
+    const t=k=>(L[document.documentElement.lang]||L.en)[k];
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items=[...document.querySelectorAll('.citem')].map(row=>{
+      const img=row.querySelector('img.cthumb'); if(!img) return null;
+      const name=row.querySelector('.cname').textContent.trim();
+      const d=row.querySelector('.cdate');
+      const date=[...d.children].map(x=>x.textContent.trim()).join(' ');
+      const venue=row.querySelector('.cvenue').textContent.trim();
+      const btn=document.createElement('button');
+      btn.type='button';btn.className='cthumb-btn';
+      img.parentNode.insertBefore(btn,img);btn.appendChild(img);
+      return {img,btn,name,date,venue};
+    }).filter(Boolean);
+    if(!items.length) return;
+    const icon=p=>'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+p+'"/></svg>';
+    const fv=document.createElement('div');
+    fv.id='fv';fv.setAttribute('role','dialog');fv.setAttribute('aria-modal','true');fv.setAttribute('aria-labelledby','fv-name');
+    fv.innerHTML='<button class="fv-btn" id="fv-close">'+icon('M6 6l12 12M18 6L6 18')+'</button>'+
+      '<button class="fv-btn" id="fv-prev">'+icon('M15 5l-7 7 7 7')+'</button>'+
+      '<button class="fv-btn" id="fv-next">'+icon('M9 5l7 7-7 7')+'</button>'+
+      '<img id="fv-img" alt="">'+
+      '<div id="fv-cap"><div id="fv-name"></div><div id="fv-meta"></div><div id="fv-count" aria-live="polite"></div></div>';
+    document.body.appendChild(fv);
+    const $=id=>document.getElementById(id), big=$('fv-img');
+    let cur=0, opener=null;
+    const label=()=>{items.forEach(it=>it.btn.setAttribute('aria-label',t('view')+': '+it.name));
+      $('fv-close').setAttribute('aria-label',t('close'));$('fv-prev').setAttribute('aria-label',t('prev'));$('fv-next').setAttribute('aria-label',t('next'));};
+    label(); new MutationObserver(label).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    function show(i){
+      cur=(i+items.length)%items.length; const it=items[cur];
+      big.src=it.img.currentSrc||it.img.src; big.alt=it.img.alt;
+      $('fv-name').textContent=it.name; $('fv-meta').textContent=it.date+' · '+it.venue;
+      $('fv-count').textContent=(cur+1)+' '+t('of')+' '+items.length;
+    }
+    function flipFrom(el,dir){ // grow from / shrink to the thumbnail
+      if(reduce||!el||!el.offsetParent) return false;
+      const a=el.getBoundingClientRect(), b=big.getBoundingClientRect();
+      if(!b.width) return false;
+      const tf='translate('+(a.left+a.width/2-(b.left+b.width/2))+'px,'+(a.top+a.height/2-(b.top+b.height/2))+'px) scale('+Math.max(a.width/b.width,a.height/b.height)+')';
+      const k=[{transform:tf},{transform:'none'}];
+      return big.animate(dir==='in'?k:k.reverse(),{duration:dir==='in'?240:200,easing:'cubic-bezier(.23,1,.32,1)',fill:dir==='in'?'none':'forwards'});
+    }
+    function open(i){
+      opener=items[i].btn; show(i);
+      document.getElementById('cthumb-preview')?.style.setProperty('display','none');
+      fv.classList.add('open'); document.body.style.overflow='hidden';
+      requestAnimationFrame(()=>{fv.classList.add('visible');
+        const go=()=>flipFrom(items[i].img,'in');
+        big.complete?go():big.addEventListener('load',go,{once:true});});
+      $('fv-close').focus({preventScroll:true});
+    }
+    function close(){
+      const it=items[cur];
+      const anim=flipFrom(it.img,'out');
+      fv.classList.remove('visible');
+      const done=()=>{fv.classList.remove('open');big.getAnimations().forEach(a=>a.cancel());big.style.transform='';document.body.style.overflow='';(it.btn.offsetParent?it.btn:opener)?.focus({preventScroll:true});};
+      setTimeout(done,reduce?0:200);
+    }
+    items.forEach((it,i)=>it.btn.addEventListener('click',()=>open(i)));
+    $('fv-close').addEventListener('click',close);
+    $('fv-prev').addEventListener('click',()=>show(cur-1));
+    $('fv-next').addEventListener('click',()=>show(cur+1));
+    fv.addEventListener('click',e=>{if(e.target===fv||e.target.id==='fv-cap')close();});
+    document.addEventListener('keydown',e=>{
+      if(!fv.classList.contains('open'))return;
+      if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(cur-1); else if(e.key==='ArrowRight')show(cur+1);
+      else if(e.key==='Tab'){const f=[...fv.querySelectorAll('button')].filter(b=>b.offsetParent);const a=f.indexOf(document.activeElement);
+        if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus();}}
+    });
+    // one-finger swipe: sideways = next/prev, down = close (pinch-zoom left to the browser)
+    let sx=0,sy=0,tracking=false;
+    fv.addEventListener('touchstart',e=>{tracking=e.touches.length===1;if(tracking){sx=e.touches[0].clientX;sy=e.touches[0].clientY;}},{passive:true});
+    fv.addEventListener('touchmove',e=>{
+      if(!tracking||e.touches.length!==1)return;tracking=e.touches.length===1;
+      const dy=e.touches[0].clientY-sy,dx=e.touches[0].clientX-sx;
+      if(dy>0&&Math.abs(dy)>Math.abs(dx)&&!reduce){big.style.transform='translateY('+dy+'px)';fv.style.opacity=Math.max(.3,1-dy/400);}
+    },{passive:true});
+    fv.addEventListener('touchend',e=>{
+      if(!tracking)return;tracking=false;
+      const p=e.changedTouches[0],dx=p.clientX-sx,dy=p.clientY-sy;
+      big.style.transform='';fv.style.opacity='';
+      if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)show(cur+(dx<0?1:-1));
+      else if(dy>90&&dy>Math.abs(dx))close();
+    });
   })();
 </script>
 </body>
