@@ -295,6 +295,33 @@
     /* New EP glow */
     .epc-new{border-color:rgba(165,95,245,.5)!important}
     .ep-glow-ring{position:absolute;inset:0;border-radius:16px;pointer-events:none;box-shadow:0 24px 60px -12px rgba(0,0,0,.7);z-index:-1}
+    /* ── Latest release card (brochure style: cream card, hard yellow offset shadow) ── */
+    :root{--maiz:#f5c23e;--cream:#fbf3e6;--ink:#1a1214}
+    .epg{max-width:640px;padding:30px 30px 40px}
+    .rel{position:relative;display:grid;grid-template-columns:200px 1fr;align-items:center;gap:28px;width:100%;padding:18px 28px 18px 18px;background:var(--cream);border-radius:22px;box-shadow:10px 10px 0 var(--maiz);transition:transform .2s cubic-bezier(.23,1,.32,1),box-shadow .2s cubic-bezier(.23,1,.32,1),opacity .8s ease}
+    .rel .ep-particles{z-index:-1}
+    .rel-art{position:relative;width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;display:block}
+    .rel-body{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left}
+    .rel-tag{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d42a1d}
+    .rel-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;line-height:1.1;color:#7a35d6}
+    .rel-btn{display:inline-flex;align-items:center;gap:9px;margin-top:6px;padding:11px 22px;background:var(--maiz);color:var(--ink);font-family:'SUSE',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-radius:999px;transition:transform .16s ease-out}
+    .rel-btn::after{content:'';position:absolute;inset:0;border-radius:22px}
+    .rel-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+    .rel:active{transform:translate(4px,4px);box-shadow:6px 6px 0 var(--maiz)}
+    .rel:active .rel-btn{transform:scale(.97)}
+    @media(hover:hover){
+      .rel:hover{transform:translate(-3px,-3px);box-shadow:13px 13px 0 var(--maiz)}
+      .rel:hover .rel-btn{transform:scale(1.04)}
+    }
+    @media(max-width:560px){
+      .epg{padding:20px 12px 30px}
+      .rel{grid-template-columns:104px 1fr;gap:16px;padding:12px 16px 12px 12px;border-radius:18px;box-shadow:7px 7px 0 var(--maiz)}
+      .rel-art{border-radius:10px}
+      .rel-body{gap:6px}
+      .rel-title{font-size:1.25rem}
+      .rel-btn{padding:9px 16px;font-size:.75rem;letter-spacing:.12em}
+      .rel:active{box-shadow:4px 4px 0 var(--maiz)}
+    }
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
@@ -329,8 +356,6 @@
       #lang-btn:hover{opacity:1;border-color:rgba(245,240,235,.6)}
       .btn-p:hover{background:transparent;color:var(--p)}
       .btn-o:hover{border-color:var(--r);color:var(--r)}
-      .epc:hover{transform:scale(1.06);box-shadow:0 20px 60px rgba(0,0,0,.5)}
-      .epc:not(.cs):hover .scw{opacity:1}
       .epl:hover{background:transparent;color:var(--p)}
       .marquee-track:hover{animation-play-state:paused}
       .pph:hover img{transform:scale(1.08);filter:grayscale(0%)}
@@ -340,7 +365,6 @@
       .bsub:hover{background:transparent;color:var(--p)}
       .fl a:hover{opacity:.85}
       .cmore-btn:hover{border-color:var(--p);background:rgba(165,95,245,.08)}
-      .epc:hover .ep-img-sc{opacity:0}
     }
   </style>
 </head>
@@ -417,18 +441,15 @@
 <section id="music" class="sw">
   <div class="sh rv"><div class="sr"></div><h2 class="st" data-i18n="nav-music">Music</h2><div class="sr"></div></div>
   <div class="epg">
-    <div class="epc epc-new rv">
+    <article class="rel rv">
       <canvas class="ep-particles" id="ep-canvas"></canvas>
-      <div class="ep-glow-ring"></div>
-      <div class="epaw">
-        <img width="900" height="900" src="assets/asset-4191a794.webp" alt="Hay Unas Cuestiones artwork" class="ep-img" loading="lazy" decoding="async">
+      <img width="900" height="900" src="assets/asset-4191a794.webp" alt="Hay Unas Cuestiones artwork" class="rel-art" loading="lazy" decoding="async">
+      <div class="rel-body">
+        <p class="rel-tag" data-i18n="ep-soon-tag">Latest Release</p>
+        <h3 class="rel-title">Hay Unas Cuestiones</h3>
+        <a href="https://listen.music-hub.com/4ctcmb" target="_blank" rel="noopener" class="rel-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span data-i18n="ep-listen">Listen Now</span></a>
       </div>
-      <div class="epm">
-        <p class="ept" style="color:var(--p)" data-i18n="ep-soon-tag">EP · Out Now</p>
-        <h3 class="eptt">Hay Unas Cuestiones</h3>
-        <a href="https://listen.music-hub.com/4ctcmb" target="_blank" rel="noopener" class="epl" data-i18n="ep-listen"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Listen Now</a>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -836,7 +857,7 @@ const T={
     'about-p3':'So the range is wide: they can <em>envenenar</em> a song until the dancefloor doesn\'t know what hit it, or strip everything back and let the tambora speak for itself. Both feel like home.',
     'about-tag':'Afro Colombian Caribbean Rhythms',
     'about-rhythms-link':'If you wanna know more about our rhythms <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">click here!</a>',
-    'ep-soon-tag':'EP · Out Now','ep-listen':'<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Listen Now',
+    'ep-soon-tag':'Latest Release','ep-listen':'Listen Now',
     'concerts-title':'Recent Concerts',
     'footer-copy':'© 2026 Palo Santo. All rights reserved.'
   },
@@ -848,7 +869,7 @@ const T={
     'about-p3':'El rango es amplio: pueden envenenar una canción hasta que la pista no sepa qué la golpeó, o volver a lo esencial y dejar que la tambora hable sola. Los dos se sienten como en casa.',
     'about-tag':'Ritmos Afrocolombianos del Caribe',
     'about-rhythms-link':'¿Quieres saber más sobre nuestros ritmos? <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">¡Haz clic aquí!</a>',
-    'ep-soon-tag':'EP · Ya disponible','ep-listen':'<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Escuchar',
+    'ep-soon-tag':'Nuevo lanzamiento','ep-listen':'Escuchar',
     'concerts-title':'Conciertos Recientes',
     'footer-copy':'© 2026 Palo Santo. Todos los derechos reservados.'
   }
