@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
   <meta name="theme-color" content="#0a0809"/>
   <title>Palo Santo</title>
-  <meta name="description" content="Palo Santo — Colombian Caribbean coast music from Berlin. Cumbia, Puya, Mapalé, Bullerengue, Afro-Colombian rhythms."/>
+  <meta name="description" content="Palo Santo: Colombian Caribbean coast music from Berlin. Cumbia, Puya, Mapalé, Bullerengue, Afro-Colombian rhythms."/>
   <meta name="keywords" content="Palo Santo, cumbia, puya, mapalé, bullerengue, Colombian music, Berlin, Caribbean, Afro-Colombian"/>
   <link rel="canonical" href="https://palosantomusic.github.io/" />
   <meta name="robots" content="index, follow"/>
@@ -36,7 +36,7 @@
   <link rel="icon" type="image/png" href="assets/asset-1ec4875a.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@200;300;400;600;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -54,10 +54,8 @@
     #topbar.scrolled #topbar-logo{opacity:1;pointer-events:auto}
     #topbar-nav{display:flex;gap:22px;align-items:center;opacity:0;pointer-events:none;transition:opacity .4s}
     #topbar.scrolled #topbar-nav{opacity:1;pointer-events:auto}
-    #topbar-nav a{color:#f5f0eb;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.75;transition:opacity .2s}
-    #topbar-nav a:hover{opacity:1}
-    #lang-btn{background:none;border:1px solid rgba(245,240,235,.25);color:#f5f0eb;font-family:'SUSE',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;padding:3px 10px;border-radius:999px;cursor:pointer;transition:border-color .2s,opacity .2s;opacity:.75;line-height:1;vertical-align:middle}
-    #lang-btn:hover{opacity:1;border-color:rgba(245,240,235,.6)}
+    #topbar-nav a{color:#f5f0eb;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.75;transition:opacity .2s}
+    #lang-btn{background:none;border:1px solid rgba(245,240,235,.25);color:#f5f0eb;font-family:'SUSE',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;padding:3px 10px;border-radius:999px;cursor:pointer;transition:border-color .2s,opacity .2s;opacity:.75;line-height:1;vertical-align:middle}
     /* ── HERO ── */    #hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#0a0809;z-index:1}
     /* Video: full screen, behind everything */
     .hvid{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
@@ -82,11 +80,9 @@
     .hcta{display:flex;gap:16px;opacity:0;animation:fu 1s ease 1.2s forwards}
 
     /* ── BUTTONS — pill shape ── */
-    .btn{font-family:'SUSE',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1.5px solid;border-radius:999px;transition:all .3s;cursor:pointer;display:inline-block}
+    .btn{font-family:'SUSE',sans-serif;font-weight:600;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;padding:13px 36px;text-decoration:none;border:1.5px solid;border-radius:999px;transition:background-color .3s,color .3s,border-color .3s,transform .3s;cursor:pointer;display:inline-block}
     .btn-p{background:var(--p);color:var(--w);border-color:var(--p)}
-    .btn-p:hover{background:transparent;color:var(--p)}
     .btn-o{background:transparent;color:var(--w);border-color:rgba(245,242,240,.3)}
-    .btn-o:hover{border-color:var(--r);color:var(--r)}
 
     @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
@@ -121,7 +117,7 @@
     section p:not(.cname):not(.cvenue){text-align:justify}
     .abt strong{font-weight:700;color:var(--p)}
     .instr{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;justify-content:center}
-    .ins{font-size:.74rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;border:1px solid var(--bp);color:var(--p);border-radius:999px}
+    .ins{font-size:.75rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;border:1px solid var(--bp);color:var(--p);border-radius:999px}
 
     /* ── MUSIC ── */
     #music{background:transparent;overflow:visible}
@@ -129,30 +125,26 @@
     .epg{display:flex;justify-content:center;gap:24px;max-width:680px;margin:0 auto;padding:30px;overflow:visible}
     .epg .epc{width:clamp(260px,40vw,320px);flex-shrink:0}
     .epc{background:transparent;border:1px solid var(--bp);overflow:visible;border-radius:16px;position:relative;transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s}
-    .epc:hover{transform:scale(1.06);box-shadow:0 20px 60px rgba(0,0,0,.5)}
     .epc.cs{border-style:dashed;opacity:.6}
     .epaw{aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:16px 16px 0 0}
     .epc:nth-child(1) .epaw{background:transparent}
     .epc:nth-child(2) .epaw{background:transparent}
     .epai{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px}
     .epic{font-size:2.5rem;opacity:.12}
-    .csl{font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--r);opacity:1}
+    .csl{font-size:.75rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--r);opacity:1}
     .scw{position:absolute;inset:0;opacity:0;transition:opacity .4s;border-radius:16px 16px 0 0;overflow:hidden}
     .scw iframe{width:100%;height:100%;border:none}
-    .epc:not(.cs):hover .scw{opacity:1}
     .epm{padding:18px 20px;text-align:center;background:var(--pn);border-radius:0 0 16px 16px}
-    .ept{font-size:.72rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--r);margin-bottom:5px}
+    .ept{font-size:.75rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--r);margin-bottom:5px}
     .eptt{font-size:1.1rem;font-weight:700;color:var(--w);margin-bottom:4px}
-    .eps{font-size:.72rem;font-weight:300;opacity:.65}
-    .epl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--w);background:var(--p);text-decoration:none;padding:8px 20px;border-radius:999px;border:1.5px solid var(--p);transition:background .3s,color .3s}
-    .epl:hover{background:transparent;color:var(--p)}
+    .eps{font-size:.75rem;font-weight:300;opacity:.65}
+    .epl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--w);background:var(--pd);text-decoration:none;padding:8px 20px;border-radius:999px;border:1.5px solid var(--p);transition:background .3s,color .3s}
     .cs .epl{background:rgba(165,95,245,.1);color:rgba(245,242,240,.3);border-color:rgba(165,95,245,.15);pointer-events:none}
 
     /* ── PRESS — infinite marquee ── */
     #press{background:var(--dm);overflow:visible;padding:0}
     .marquee-wrap{overflow:hidden}
     .marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite;padding:30px 0}
-    .marquee-track:hover{animation-play-state:paused}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     .pph{flex:0 0 auto;width:420px;height:300px;margin-right:14px;background:var(--pn);
       border:1px solid rgba(165,95,245,.1);border-radius:14px;overflow:hidden;
@@ -164,51 +156,45 @@
     .pph.bw img{filter:grayscale(100%)}
     .pph:hover{opacity:1;border-color:var(--p);transform:scale(1.1);z-index:20;
       box-shadow:0 24px 64px rgba(0,0,0,.8)}
-    .pph:hover img{transform:scale(1.08);filter:grayscale(0%)}
 
     /* ── LIGHTBOX ── */
     #lb{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.93);display:none;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;overflow:hidden}
     #lb.open{display:flex}
     #lb.visible{opacity:1}
     #lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(245,242,240,.6);font-size:2rem;cursor:pointer;line-height:1;transition:color .2s;z-index:10}
-    #lb-close:hover{color:#fff}
     #lb-track{display:flex;align-items:center;gap:16px;will-change:transform;flex-shrink:0;align-self:flex-start}
     .lb-slide{flex:0 0 min(80vw,700px);cursor:pointer;transition:transform .45s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94);will-change:transform,opacity}
     .lb-slide img{width:100%;max-height:72vh;object-fit:contain;border-radius:20px;display:block;user-select:none;pointer-events:none}
     .lb-slide.lb-cur{transform:scale(1) translateZ(0);opacity:1;cursor:default}
     .lb-slide:not(.lb-cur){transform:scale(0.88) translateZ(0);opacity:0.4}
     #lb-footer{margin-top:20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,242,240,.5);text-align:center}
-    #lb-credit{font-size:.76rem;letter-spacing:.1em;color:rgba(245,242,240,.6);text-align:center;margin-top:5px;font-style:italic}
-    #lb-counter{font-size:.72rem;letter-spacing:.12em;color:rgba(245,242,240,.6);margin-top:6px}
+    #lb-credit{font-size:.75rem;letter-spacing:.1em;color:rgba(245,242,240,.6);text-align:center;margin-top:5px;font-style:italic}
+    #lb-counter{font-size:.75rem;letter-spacing:.12em;color:rgba(245,242,240,.6);margin-top:6px}
 
     /* ── CONTACT ── */
     #contact{background:var(--dk)}
     .cg{display:flex;flex-direction:column;align-items:center;gap:40px;max-width:560px;margin:0 auto;text-align:center;width:100%}
     .cl{font-size:clamp(1rem,1.6vw,1.3rem);font-weight:200;line-height:1.6;opacity:.7;margin-bottom:24px}
     .cits{display:flex;flex-direction:column;gap:16px;margin-bottom:32px;align-items:center}
-    .clbl{font-size:.72rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--r);opacity:1;margin-bottom:4px}
+    .clbl{font-size:.75rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--r);opacity:1;margin-bottom:4px}
     .cv{font-size:1.1rem;font-weight:400;color:var(--w);opacity:.8;text-decoration:none;transition:opacity .3s,color .3s}
-    .cv:hover{opacity:1;color:var(--p)}
     .socs{display:flex;gap:10px;justify-content:center}
     .soc{width:48px;height:48px;border:1px solid var(--bp);border-radius:999px;display:flex;align-items:center;justify-content:center;color:rgba(245,242,240,.7);opacity:1;text-decoration:none;transition:color .3s,border-color .3s,background .3s,transform .3s;cursor:pointer}
-    .soc:hover{border-color:var(--p);color:var(--p);background:rgba(165,95,245,.08);transform:translateY(-3px)}
     .cform{width:100%}
     .fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .fg{margin-bottom:18px;text-align:left}
-    label{display:block;font-size:.72rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--p);opacity:.9;margin-bottom:10px}    input,textarea,select{width:100%;background:rgba(165,95,245,.06);border:1px solid var(--bp);color:var(--w);font-family:'SUSE',sans-serif;font-weight:400;font-size:1rem;padding:14px 16px;outline:none;border-radius:8px;transition:border-color .3s,background .3s}
+    label{display:block;font-size:.75rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--p);opacity:.9;margin-bottom:10px}    input,textarea,select{width:100%;background:rgba(165,95,245,.06);border:1px solid var(--bp);color:var(--w);font-family:'SUSE',sans-serif;font-weight:400;font-size:1rem;padding:14px 16px;outline:none;border-radius:8px;transition:border-color .3s,background .3s}
     input:focus,textarea:focus,select:focus{border-color:var(--p);background:rgba(165,95,245,.07)}
     textarea{resize:none;height:110px}
     select option{background:var(--dm)}
-    .bsub{width:100%;font-family:'SUSE',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.25em;text-transform:uppercase;padding:14px;background:var(--p);color:var(--w);border:1.5px solid var(--p);border-radius:999px;cursor:pointer;transition:all .3s}
-    .bsub:hover{background:transparent;color:var(--p)}
+    .bsub{width:100%;font-family:'SUSE',sans-serif;font-weight:600;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;padding:14px;background:var(--p);color:var(--w);border:1.5px solid var(--p);border-radius:999px;cursor:pointer;transition:background-color .3s,color .3s,border-color .3s,transform .3s}
 
     /* ── FOOTER ── */
     footer{padding:44px 64px;border-top:1px solid rgba(165,95,245,.12);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:var(--dk);text-align:center}
     .footer-logo{width:52px;display:block}
-    .fc{font-size:.74rem;font-weight:300;letter-spacing:.12em;opacity:.6}
+    .fc{font-size:.75rem;font-weight:300;letter-spacing:.12em;opacity:.6}
     .fl{display:flex;gap:28px}
-    .fl a{font-size:.74rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--w);opacity:.6;text-decoration:none;transition:opacity .3s}
-    .fl a:hover{opacity:.85}
+    .fl a{font-size:.75rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--w);opacity:.6;text-decoration:none;transition:opacity .3s}
 
     /* ── CONCERTS ── */
     #concerts{background:var(--dm);overflow:hidden}
@@ -218,19 +204,18 @@
     .cthumb{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid rgba(165,95,245,.2);flex-shrink:0;cursor:zoom-in}
     #cthumb-preview{position:fixed;z-index:9999;pointer-events:none;display:none;border-radius:12px;border:1px solid rgba(165,95,245,.3);box-shadow:0 16px 48px rgba(0,0,0,.7);max-width:320px;max-height:320px;object-fit:contain;background:var(--dk)}
     .cthumb-empty{width:72px;height:72px;flex-shrink:0}
-    .cmore-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px auto 0;background:none;border:1px solid rgba(165,95,245,.25);color:var(--p);font-family:'SUSE',sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:10px 24px;border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s}
-    .cmore-btn:hover{border-color:var(--p);background:rgba(165,95,245,.08)}
+    .cmore-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px auto 0;background:none;border:1px solid rgba(165,95,245,.25);color:var(--p);font-family:'SUSE',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:10px 24px;border-radius:999px;cursor:pointer;transition:border-color .2s,background .2s}
     .cmore-btn svg{transition:transform .3s}
     .cmore-btn.open svg{transform:rotate(180deg)}
     .chidden{display:none}
     .cdate{text-align:center;flex-shrink:0}
     .cdate-day{font-size:2rem;font-weight:700;color:var(--p);line-height:1}
-    .cdate-mon{font-size:.72rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--p);opacity:1;margin-top:2px}
-    .cdate-yr{font-size:.72rem;font-weight:300;letter-spacing:.14em;opacity:.6;margin-top:2px}
+    .cdate-mon{font-size:.75rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--p);opacity:1;margin-top:2px}
+    .cdate-yr{font-size:.75rem;font-weight:300;letter-spacing:.14em;opacity:.6;margin-top:2px}
     .cinfo{min-width:0}
     .cname{font-size:1rem;font-weight:700;color:var(--w);margin-bottom:4px}
-    .cvenue{font-size:.78rem;font-weight:300;opacity:.55;letter-spacing:.06em}
-    .ctag{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 14px;border:1px solid rgba(165,95,245,.3);color:var(--p);border-radius:999px;white-space:nowrap;flex-shrink:0}
+    .cvenue{font-size:.75rem;font-weight:300;opacity:.55;letter-spacing:.06em}
+    .ctag{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 14px;border:1px solid rgba(165,95,245,.3);color:var(--p);border-radius:999px;white-space:nowrap;flex-shrink:0}
     @media(max-width:768px){
       .citem{grid-template-columns:80px 1fr;gap:14px}
       .ctag{display:none}
@@ -252,7 +237,7 @@
       /* topbar */
       #topbar{height:44px;padding:0 16px}
       #topbar-nav{gap:12px}
-      #topbar-nav a{font-size:.76rem}
+      #topbar-nav a{font-size:.75rem}
       #topbar-nav a:not([href="our-rhythms.html"]){display:none}
       #topbar-logo{height:32px}
 
@@ -261,7 +246,7 @@
       .hframe{inset:16px}
       .hframe::before,.hframe::after{width:24px;height:24px}
       .hcta{flex-direction:column;gap:12px;align-items:center}
-      .btn{padding:12px 32px;font-size:.7rem;width:200px;text-align:center}
+      .btn{padding:12px 28px;font-size:.75rem;min-width:240px;white-space:nowrap;text-align:center}
   
       /* shared sections */
       .sw{padding:60px 20px}
@@ -273,7 +258,7 @@
       /* about */
       .abt{font-size:1rem;line-height:1.85}
       .instr{gap:8px}
-      .ins{font-size:.74rem;padding:6px 14px}
+      .ins{font-size:.75rem;padding:6px 14px}
 
       /* music EP grid — stack on mobile */
       .epg{grid-template-columns:1fr;max-width:340px;gap:20px}
@@ -303,20 +288,13 @@
     /* EP artwork image */
     .ep-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:16px 16px 0 0}
     .ep-img-sc{opacity:1;transition:opacity .4s}
-    .epc:hover .ep-img-sc{opacity:0}
 
     /* Particles on both EP cards — canvas sits on epc (overflow:visible), centred */
     .ep-particles{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
 
     /* New EP glow */
     .epc-new{border-color:rgba(165,95,245,.5)!important}
-    .ep-glow-ring{position:absolute;inset:-8px;border-radius:20px;pointer-events:none;
-      box-shadow:0 0 28px 6px rgba(165,95,245,.45),0 0 60px 12px rgba(165,95,245,.2),0 0 4px 1px rgba(235,53,39,.3);
-      animation:glowpulse 3s ease-in-out infinite;z-index:3}
-    @keyframes glowpulse{
-      0%,100%{box-shadow:0 0 28px 6px rgba(165,95,245,.45),0 0 60px 12px rgba(165,95,245,.2),0 0 4px 1px rgba(235,53,39,.3)}
-      50%{box-shadow:0 0 40px 10px rgba(165,95,245,.65),0 0 80px 20px rgba(165,95,245,.3),0 0 8px 3px rgba(235,53,39,.5)}
-    }
+    .ep-glow-ring{position:absolute;inset:0;border-radius:16px;pointer-events:none;box-shadow:0 24px 60px -12px rgba(0,0,0,.7);z-index:-1}
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
@@ -324,6 +302,45 @@
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
       .rv,.hlogo,.hcta,.htitle,.hsub,.htag{opacity:1!important;transform:none!important;animation:none!important}
       .marquee-track{animation:none!important}
+    }
+
+    /* ── Shared: nav always visible, mobile menu, darker filled buttons, hover only on hover devices ── */
+    :root{--pd:#8a40e0}
+    img{height:auto}
+    #topbar-nav{opacity:1!important;pointer-events:auto!important}
+    .tb-right{display:flex;align-items:center;gap:22px}
+    #menu-btn{display:none;background:none;border:0;color:#f5f0eb;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;margin-right:-10px;-webkit-tap-highlight-color:transparent}
+    #menu-btn path{transition:transform .25s ease;transform-origin:12px 12px}
+    #menu-btn[aria-expanded="true"] .mb-top{transform:translateY(4px) rotate(45deg)}
+    #menu-btn[aria-expanded="true"] .mb-bot{transform:translateY(-4px) rotate(-45deg)}
+    .btn-p,.bsub{background:var(--pd);border-color:var(--pd)}
+    .btn-o{background:transparent;color:var(--w);border-color:rgba(245,242,240,.3)}
+    a,button{-webkit-tap-highlight-color:transparent}
+    @media(max-width:768px){
+      .tb-right{gap:4px}
+      #menu-btn{display:flex}
+      #topbar-nav{position:fixed;top:44px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,8,9,.98);padding:8px 16px 24px;border-bottom:1px solid rgba(165,95,245,.15)}
+      #topbar-nav.open{display:flex}
+      #topbar-nav a,#topbar-nav a:not([href="our-rhythms.html"]){display:block;font-size:.95rem;letter-spacing:.12em;padding:14px 4px;opacity:.85}
+      #topbar-nav a+a{border-top:1px solid rgba(245,242,240,.06)}
+    }
+    @media(hover:hover){
+      #topbar-nav a:hover{opacity:1}
+      #lang-btn:hover{opacity:1;border-color:rgba(245,240,235,.6)}
+      .btn-p:hover{background:transparent;color:var(--p)}
+      .btn-o:hover{border-color:var(--r);color:var(--r)}
+      .epc:hover{transform:scale(1.06);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+      .epc:not(.cs):hover .scw{opacity:1}
+      .epl:hover{background:transparent;color:var(--p)}
+      .marquee-track:hover{animation-play-state:paused}
+      .pph:hover img{transform:scale(1.08);filter:grayscale(0%)}
+      #lb-close:hover{color:#fff}
+      .cv:hover{opacity:1;color:var(--p)}
+      .soc:hover{border-color:var(--p);color:var(--p);background:rgba(165,95,245,.08);transform:translateY(-3px)}
+      .bsub:hover{background:transparent;color:var(--p)}
+      .fl a:hover{opacity:.85}
+      .cmore-btn:hover{border-color:var(--p);background:rgba(165,95,245,.08)}
+      .epc:hover .ep-img-sc{opacity:0}
     }
   </style>
 </head>
@@ -345,16 +362,19 @@
 
 <div id="topbar">
   <a href="#hero" aria-label="Palo Santo home">
-    <img id="topbar-logo" src="assets/asset-426775c8.jpg" alt="Palo Santo">
+    <img width="200" height="200" id="topbar-logo" src="assets/asset-426775c8.jpg" alt="Palo Santo">
   </a>
+  <div class="tb-right">
+    <button id="lang-btn" aria-label="Switch language">ES</button>
+    <button id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="topbar-nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path class="mb-top" d="M4 8h16"/><path class="mb-bot" d="M4 16h16"/></svg></button>
   <nav id="topbar-nav">
     <a href="#about" data-i18n="nav-about">About</a>
     <a href="#music" data-i18n="nav-music">Music</a>
     <a href="#concerts" data-i18n="nav-concerts">Concerts</a>
     <a href="our-rhythms.html" data-i18n="nav-rhythms">Our Rhythms</a>
     <a href="#contact" data-i18n="nav-contact">Contact</a>
-    <button id="lang-btn" aria-label="Switch language">ES</button>
   </nav>
+  </div>
 </div>
 
 <section id="hero">
@@ -383,8 +403,8 @@
   <div class="sw">
     <div class="sh rv"><div class="sr"></div><h2 class="st" data-i18n="nav-about">About</h2><div class="sr"></div></div>
     <div class="rv d1">
-      <p class="abt" data-i18n="about-p1"><strong>PALO SANTO</strong> is a Berlin-based band rooted in the music of Colombia's Caribbean coast. Their full-band format is an investigation — an ongoing experiment that takes traditional rhythms as its foundation and transforms them for international stages, adding bass, guitar, and electronic drums to give new textures to the soundtrack of a collective cultural memory.</p>
-      <p class="abt" style="margin-top:22px" data-i18n="about-p2">But the experiment only works because the tradition came first. Palo Santo was built on mounting Cumbia, Bullerengue, Puya, and Mapalé as they are meant to be played — and that essence never left.</p>
+      <p class="abt" data-i18n="about-p1"><strong>PALO SANTO</strong> is a Berlin-based band rooted in the music of Colombia's Caribbean coast. Their full-band format is an investigation: an ongoing experiment that takes traditional rhythms as its foundation and transforms them for international stages, adding bass, guitar, and electronic drums to give new textures to the soundtrack of a collective cultural memory.</p>
+      <p class="abt" style="margin-top:22px" data-i18n="about-p2">But the experiment only works because the tradition came first. Palo Santo was built on mounting Cumbia, Bullerengue, Puya, and Mapalé as they are meant to be played, and that essence never left.</p>
       <p class="abt" style="margin-top:22px" data-i18n="about-p3">So the range is wide: they can <em>envenenar</em> a song until the dancefloor doesn't know what hit it, or strip everything back and let the tambora speak for itself. Both feel like home.</p>
       <div class="instr">
         <span class="ins">Cumbia</span><span class="ins">Puya</span><span class="ins">Mapalé</span><span class="ins">Bullerengue</span><span class="ins" data-i18n="about-tag">Afro Colombian Caribbean Rhythms</span>
@@ -401,13 +421,13 @@
       <canvas class="ep-particles" id="ep-canvas"></canvas>
       <div class="ep-glow-ring"></div>
       <div class="epaw">
-        <img src="assets/asset-4191a794.webp" alt="Hay Unas Cuestiones artwork" class="ep-img" loading="lazy" decoding="async">
+        <img width="900" height="900" src="assets/asset-4191a794.webp" alt="Hay Unas Cuestiones artwork" class="ep-img" loading="lazy" decoding="async">
       </div>
       <div class="epm">
         <p class="ept" style="color:var(--p)" data-i18n="ep-soon-tag">EP · Coming Soon</p>
         <h3 class="eptt">Hay Unas Cuestiones</h3>
         <p class="eps" data-i18n="ep-soon-sub">Pre-save now</p>
-        <a href="https://listen.music-hub.com/4ctcmb" target="_blank" rel="noopener" class="epl">♡ &nbsp;Pre-Save</a>
+        <a href="https://listen.music-hub.com/4ctcmb" target="_blank" rel="noopener" class="epl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Pre-Save</a>
       </div>
     </div>
   </div>
@@ -416,26 +436,26 @@
 <section id="press">
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-group.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph rv" data-caption="Palo Santo recording session, Berlin 2025"><img src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
-      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img src="assets/kdk-group.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
-      <div class="pph" data-caption="Palo Santo recording session, Berlin 2025"><img src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="2000" src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="2000" src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1500" src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw rv" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/kdk-group.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph rv" data-caption="Palo Santo recording session, Berlin 2025"><img width="1200" height="801" src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-2.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-5.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo · La Noche, Badehaus Berlin 2023" data-credit="© Leo Guenther de la Casa"><img width="1200" height="800" src="assets/lanoche-6.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/AMO_0901.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="2000" src="assets/AMO_0919.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/AMO_1011.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="2000" src="assets/kdk-5230042.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1500" src="assets/kdk-5230240.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph bw" data-caption="Palo Santo · Karneval der Kulturen, Berlin 2026" data-credit="© Alejandro L. Montoya"><img width="2000" height="1333" src="assets/kdk-group.webp" alt="Palo Santo live" loading="lazy" decoding="async"></div>
+      <div class="pph" data-caption="Palo Santo recording session, Berlin 2025"><img width="1200" height="801" src="assets/recording-session.webp" alt="Palo Santo recording session" loading="lazy" decoding="async"></div>
     </div>
 
   </div>
@@ -457,68 +477,68 @@
         <div class="cdate"><div class="cdate-day">03</div><div class="cdate-mon">Oct</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Salsa pa'l Pueblo</div><div class="cvenue">K-19 · Berlin Kreuzberg</div></div>
         <span class="ctag">Concert</span>
-        <img class="cthumb" src="assets/salsa-pal-pueblo-2026.webp" alt="Salsa pa'l Pueblo flyer" loading="lazy">
+        <img width="400" height="533" class="cthumb" src="assets/salsa-pal-pueblo-2026.webp" alt="Salsa pa'l Pueblo flyer" loading="lazy">
       </div>
       <div class="citem rv d1 chidden">
         <div class="cdate"><div class="cdate-day">12</div><div class="cdate-mon">Sep</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Ayllu-Fest</div><div class="cvenue">Auma · Berlin Schöneberg</div></div>
         <span class="ctag">Festival</span>
-        <img class="cthumb" src="assets/ayllu-fest-2026.webp" alt="Ayllu-Fest flyer" loading="lazy">
+        <img width="400" height="500" class="cthumb" src="assets/ayllu-fest-2026.webp" alt="Ayllu-Fest flyer" loading="lazy">
       </div>
       <div class="citem rv d1 chidden">
         <div class="cdate"><div class="cdate-day">06</div><div class="cdate-mon">Sep</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Noche de Tonada</div><div class="cvenue">Panke Culture · Berlin</div></div>
         <span class="ctag">Concert</span>
-        <img class="cthumb" src="assets/noche-de-tonada-2026.webp" alt="Noche de Tonada flyer" loading="lazy">
+        <img width="400" height="499" class="cthumb" src="assets/noche-de-tonada-2026.webp" alt="Noche de Tonada flyer" loading="lazy">
       </div>
       <div class="citem rv d2">
         <div class="cdate"><div class="cdate-day">05</div><div class="cdate-mon">Sep</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Threads of Liberation III</div><div class="cvenue">Renate Garden · Berlin</div></div>
         <span class="ctag">Festival</span>
-        <img class="cthumb" src="assets/threads-liberation-2026.webp" alt="Threads of Liberation III flyer" loading="lazy">
+        <img width="400" height="500" class="cthumb" src="assets/threads-liberation-2026.webp" alt="Threads of Liberation III flyer" loading="lazy">
       </div>
       <div class="citem rv d3">
         <div class="cdate"><div class="cdate-day">20</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Auma Latin Flavors</div><div class="cvenue">van.hofen Gastrobar · Berlin Neukölln</div></div>
         <span class="ctag">Bar</span>
-        <img class="cthumb" src="assets/auma-latin-flavors-2026.webp" alt="Auma Latin Flavors flyer" loading="lazy">
+        <img width="400" height="500" class="cthumb" src="assets/auma-latin-flavors-2026.webp" alt="Auma Latin Flavors flyer" loading="lazy">
       </div>
       <div class="citem rv">
         <div class="cdate"><div class="cdate-day">25</div><div class="cdate-mon">May</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Karneval der Kulturen Parade</div><div class="cvenue">Canoa Folk · Berlin</div></div>
         <span class="ctag">Carnival</span>
-        <img class="cthumb" src="assets/WfogeTJbmbyOEQWtBKNysZbC.webp" alt="Desfile Canoa Folk" loading="lazy">
+        <img width="1080" height="940" class="cthumb" src="assets/WfogeTJbmbyOEQWtBKNysZbC.webp" alt="Desfile Canoa Folk" loading="lazy">
       </div>
       <div class="citem rv d1 chidden">
         <div class="cdate"><div class="cdate-day">24</div><div class="cdate-mon">May</div><div class="cdate-yr">2026</div></div>
         <div class="cinfo"><div class="cname">Karneval der Kulturen</div><div class="cvenue">Klang Plaza · Berlin</div></div>
         <span class="ctag">Festival</span>
-        <img class="cthumb" src="assets/jetcdNBfffeZTZlgGoyhzYGg.webp" alt="KdK Klang Plaza" loading="lazy">
+        <img width="1080" height="1080" class="cthumb" src="assets/jetcdNBfffeZTZlgGoyhzYGg.webp" alt="KdK Klang Plaza" loading="lazy">
       </div>
 
       <div class="citem rv d3 chidden">
         <div class="cdate"><div class="cdate-day">04</div><div class="cdate-mon">Oct</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">5 Years of Calentura Fest</div><div class="cvenue">Panke Culture · Berlin</div></div>
         <span class="ctag">Festival</span>
-        <img class="cthumb" src="assets/Screenshot 2026-06-17 212551.webp" alt="Calentura flyer" loading="lazy">
+        <img width="1006" height="1435" class="cthumb" src="assets/Screenshot 2026-06-17 212551.webp" alt="Calentura flyer" loading="lazy">
       </div>
       <div class="citem rv chidden">
         <div class="cdate"><div class="cdate-day">4–6</div><div class="cdate-mon">Sep</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">Contextos</div><div class="cvenue">ACUD Theater · Berlin</div></div>
         <span class="ctag">Theater</span>
-        <img class="cthumb" src="assets/contextos.webp" alt="Contextos flyer" loading="lazy">
+        <img width="3880" height="4752" class="cthumb" src="assets/contextos.webp" alt="Contextos flyer" loading="lazy">
       </div>
       <div class="citem rv d1 chidden">
         <div class="cdate"><div class="cdate-day">13</div><div class="cdate-mon">Jun</div><div class="cdate-yr">2025</div></div>
         <div class="cinfo"><div class="cname">La Noche</div><div class="cvenue">Badehaus · Berlin</div></div>
         <span class="ctag">Club</span>
-        <img class="cthumb" src="assets/NPtFFloKVQNFnRxVymmmxIVS.webp" alt="La Noche Badehaus" loading="lazy">
+        <img width="1080" height="1350" class="cthumb" src="assets/NPtFFloKVQNFnRxVymmmxIVS.webp" alt="La Noche Badehaus" loading="lazy">
       </div>
       <div class="citem rv d2 chidden">
         <div class="cdate"><div class="cdate-day">23</div><div class="cdate-mon">Aug</div><div class="cdate-yr">2024</div></div>
-        <div class="cinfo"><div class="cname">La Noche — Celebrating Afrolatin Culture</div><div class="cvenue">Maaya · Berlin</div></div>
+        <div class="cinfo"><div class="cname">La Noche · Celebrating Afrolatin Culture</div><div class="cvenue">Maaya · Berlin</div></div>
         <span class="ctag">Club</span>
-        <img class="cthumb" src="assets/Noche 24.webp" alt="La Noche Maaya flyer" loading="lazy">
+        <img width="1125" height="1406" class="cthumb" src="assets/Noche 24.webp" alt="La Noche Maaya flyer" loading="lazy">
       </div>
     </div>
     <button class="cmore-btn" id="cmore-btn" aria-expanded="false">
@@ -812,8 +832,8 @@ const T={
   en:{
     'nav-about':'About','nav-music':'Music','nav-press':'Press','nav-concerts':'Concerts','nav-rhythms':'Our Rhythms','nav-contact':'Contact',
     'hero-listen':'Listen Now','hero-book':'Book the Band',
-    'about-p1':'<strong>PALO SANTO</strong> is a Berlin-based band rooted in the music of Colombia\'s Caribbean coast. Their full-band format is an investigation — an ongoing experiment that takes traditional rhythms as its foundation and transforms them for international stages, adding bass, guitar, and electronic drums to give new textures to the soundtrack of a collective cultural memory.',
-    'about-p2':'But the experiment only works because the tradition came first. Palo Santo was built on mounting Cumbia, Bullerengue, Puya, and Mapalé as they are meant to be played — and that essence never left.',
+    'about-p1':'<strong>PALO SANTO</strong> is a Berlin-based band rooted in the music of Colombia\'s Caribbean coast. Their full-band format is an investigation: an ongoing experiment that takes traditional rhythms as its foundation and transforms them for international stages, adding bass, guitar, and electronic drums to give new textures to the soundtrack of a collective cultural memory.',
+    'about-p2':'But the experiment only works because the tradition came first. Palo Santo was built on mounting Cumbia, Bullerengue, Puya, and Mapalé as they are meant to be played, and that essence never left.',
     'about-p3':'So the range is wide: they can <em>envenenar</em> a song until the dancefloor doesn\'t know what hit it, or strip everything back and let the tambora speak for itself. Both feel like home.',
     'about-tag':'Afro Colombian Caribbean Rhythms',
     'about-rhythms-link':'If you wanna know more about our rhythms <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">click here!</a>',
@@ -824,8 +844,8 @@ const T={
   es:{
     'nav-about':'Nosotros','nav-music':'Música','nav-press':'Fotos','nav-concerts':'Conciertos','nav-rhythms':'Nuestros Ritmos','nav-contact':'Contacto',
     'hero-listen':'Escuchar','hero-book':'Contratar la Banda',
-    'about-p1':'<strong>PALO SANTO</strong> es una banda berlinesa con raíces en la música del Caribe colombiano. En su formato completo son una investigación — un experimento continuo que toma los ritmos tradicionales como punto de partida y los transforma para tarimas internacionales, sumando bajo, guitarra y batería electrónica para darle nuevos matices a la banda sonora de nuestra memoria cultural colectiva.',
-    'about-p2':'Pero el experimento solo funciona porque la tradición llegó primero. Palo Santo se construyó montando Cumbia, Bullerengue, Puya y Mapalé como se deben tocar — y esa esencia nunca se fue.',
+    'about-p1':'<strong>PALO SANTO</strong> es una banda berlinesa con raíces en la música del Caribe colombiano. En su formato completo son una investigación: un experimento continuo que toma los ritmos tradicionales como punto de partida y los transforma para tarimas internacionales, sumando bajo, guitarra y batería electrónica para darle nuevos matices a la banda sonora de nuestra memoria cultural colectiva.',
+    'about-p2':'Pero el experimento solo funciona porque la tradición llegó primero. Palo Santo se construyó montando Cumbia, Bullerengue, Puya y Mapalé como se deben tocar, y esa esencia nunca se fue.',
     'about-p3':'El rango es amplio: pueden envenenar una canción hasta que la pista no sepa qué la golpeó, o volver a lo esencial y dejar que la tambora hable sola. Los dos se sienten como en casa.',
     'about-tag':'Ritmos Afrocolombianos del Caribe',
     'about-rhythms-link':'¿Quieres saber más sobre nuestros ritmos? <a href="our-rhythms.html" style="color:var(--p);font-weight:700;text-decoration:none">¡Haz clic aquí!</a>',
@@ -849,6 +869,17 @@ applyLang(initLang);
 document.getElementById('lang-btn').addEventListener('click',()=>{
   applyLang((localStorage.getItem('ps-lang')||'en')==='en'?'es':'en');
 });
+</script>
+<script>
+  // ── Mobile menu ──
+  (function(){
+    const btn=document.getElementById('menu-btn'),nav=document.getElementById('topbar-nav');
+    if(!btn||!nav)return;
+    const set=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)};
+    btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
+    nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+  })();
 </script>
 </body>
 </html>
