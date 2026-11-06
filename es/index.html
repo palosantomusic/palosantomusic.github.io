@@ -129,8 +129,8 @@
       z-index:0;
     }
     #about .sw{position:relative;z-index:1}
-    .abt{font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:300;line-height:1.7;color:rgba(245,242,240,.78);text-align:left;text-wrap:pretty}
-    section p:not(.cname):not(.cvenue){text-align:left;text-wrap:pretty}
+    .abt{font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:300;line-height:2;color:rgba(245,242,240,.78);text-align:justify}
+    section p:not(.cname):not(.cvenue){text-align:justify}
     .abt strong{font-weight:700;color:var(--p)}
     .instr{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;justify-content:center}
     .ins{font-size:.75rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;border:1px solid var(--bp);color:var(--p);border-radius:999px}
@@ -406,10 +406,6 @@
     .sr{display:none}
     .cvenue{letter-spacing:.01em}
     .fc,#lb-credit{letter-spacing:.02em}
-    /* ── About: heading, chips and link share the text's left edge ── */
-    #about .sh{justify-content:flex-start}
-    #about .instr{justify-content:flex-start}
-    #about [data-i18n="about-rhythms-link"]{text-align:left!important}
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
