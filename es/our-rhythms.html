@@ -124,7 +124,7 @@
     .htag{font-size:.75rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--p);opacity:1;margin-bottom:16px}
     .htitle{font-size:clamp(2rem,5vw,3.6rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.1;margin-bottom:28px}
     .hintro{font-size:clamp(1rem,1.6vw,1.2rem);font-weight:300;line-height:2;color:rgba(245,242,240,.75)}
-    .hintro,.body-text,.faq-a p,.voices p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty}
+    .hintro,.body-text,.faq-a p,.voices p{text-align:left;text-wrap:pretty}
 
     /* ── SHARED ── */
     .sh{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:44px}
@@ -241,11 +241,11 @@
     .aire-num{opacity:.85}
     .voices p{opacity:1;color:rgba(245,242,240,.72)}
     a#lang-btn{text-decoration:none;display:inline-flex;align-items:center}
-    [data-i18n="ps-p3"]{text-align:left}
     /* ── De-slop: plain section titles, left-aligned text, calmer tracking ── */
     .sr{display:none}
     .cvenue{letter-spacing:.01em}
     .fc,#lb-credit{letter-spacing:.02em}
+    .hintro,.body-text{line-height:1.7;max-width:68ch;margin-left:auto;margin-right:auto}
     /* Accessibility: visually hidden text + reduced motion */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     @media (prefers-reduced-motion: reduce){
